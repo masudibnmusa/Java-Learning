@@ -12,7 +12,7 @@ public class pra9 {
         double cir = 2 * 3.1316 * r;
 
         System.out.println("The Area is :"+area);
-        System.out.println("The Circumference is :"+area);
+        System.out.println("The Circumference is :"+cir);
 
     }
 }
