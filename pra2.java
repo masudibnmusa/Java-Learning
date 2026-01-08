@@ -6,5 +6,6 @@ public class pra2 {
         System.out.println("****");
         System.out.println("*****");
         System.out.println("******");
+        
     }
 }
