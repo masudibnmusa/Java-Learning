@@ -12,12 +12,11 @@ public class pra24 {
 
         if (a==b){
             System.out.println("Equal");
-        }else{
-            if (a>b){
+        }else if (a>b){
                 System.out.println("Greater");
             }else{
                 System.out.println("Smaller");
-            }
+            
         }
     }
 }
