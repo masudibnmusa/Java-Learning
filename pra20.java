@@ -14,7 +14,7 @@ public class pra20 {
         float t = sc.nextFloat();
 
         double si = (p*r*t)/100;
-        double amt = p+si;
+        double amt = p+si; 
 
         System.out.println("Simple interest is :"+si);
         System.out.println("Total Amount is:"+amt);
