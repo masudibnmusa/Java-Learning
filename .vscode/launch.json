@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "pra50",
+            "request": "launch",
+            "mainClass": "pra50",
+            "projectName": "Java_dca6b6bd"
+        },
+        {
+            "type": "java",
             "name": "prac1",
             "request": "launch",
             "mainClass": "prac1",
