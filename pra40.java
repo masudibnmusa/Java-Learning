@@ -7,9 +7,9 @@ public class pra40 {
         int n = sc.nextInt();
         
         int i = 0;
-        do {
+        while (i < n){
             System.out.println(i);
             i++;
-        } while (i<=n);
+        }
     }
 }
