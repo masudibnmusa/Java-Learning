@@ -5,9 +5,11 @@ public class pra40 {
 
         System.out.print("Enter a number:");
         int n = sc.nextInt();
-
-        for (int i = 0; i <= n ; i++ ){
+        
+        int i = 0;
+        do {
             System.out.println(i);
-        }
+            i++;
+        } while (i<=n);
     }
 }
