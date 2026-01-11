@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class pra64 {
     public static void calaculatefactorial(int n) {
         
-        int fact = 0;
+        int fact = 1;
 
         for (int i = 1; i<=n; i++){
             fact=fact*i;
