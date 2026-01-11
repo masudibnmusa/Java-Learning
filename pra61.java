@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class pra61 {
-    public static void printName(String name){
+    public static int printName(String name){
         System.out.println("Your name is : "+name);
-        return;
+        return 0;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
