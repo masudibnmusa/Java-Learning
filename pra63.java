@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class pra63 {
     public static int multi(int a ,int b){
         int multi  = a*b;
+        System.out.println("priduct is :"+multi);
         return multi;
     }
     public static void main(String[] args) {
@@ -14,6 +15,6 @@ public class pra63 {
         int b = sc.nextInt();
 
         int sum = multi(a, b);
-        System.out.println("The product is:"+sum);
+        
     }
 }
