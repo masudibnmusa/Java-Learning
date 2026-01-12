@@ -2,6 +2,11 @@ import java.util.Scanner;
 
 public class pra65 {
     public static int calFact(int n){
+        if (n<0){
+            System.out.println("invalid number");
+            return -1;
+        }
+        
         int fact = 1;
         for (int i = 1; i<=n; i++){
             fact = fact*i;
@@ -15,8 +20,10 @@ public class pra65 {
         int n = sc.nextInt();
 
         int fact = calFact(n);
+        
 
         System.out.println("The factorial is : "+fact);
+        sc.close();
 
     }
 }
