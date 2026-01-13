@@ -1,11 +1,11 @@
-package pra82;
 
-class bankAcount {
+
+class BankAcount {
     private String accNo;
     private String accHolder;
     private double bal;
 
-    bankAcount(String accNo, String accHolder, double bal) {
+    BankAcount(String accNo, String accHolder, double bal) {
         this.accNo = accNo;
         this.accHolder = accHolder;
         this.bal = bal;
@@ -37,7 +37,7 @@ class bankAcount {
 
 public class pra82 {
     public static void main(String[] args) {
-        bankAcount ac1 = new bankAcount("1234", "Masud", 12000);
+        BankAcount ac1 = new BankAcount("1234", "Masud", 12000);
         ac1.display();
 
         ac1.deposite(5000);

@@ -1,9 +1,10 @@
-import pra82.pra82;
-
 
 public class pra91 {
    public static void main(String[] args){
-    pra82.bankAcount ac1 = new pra82.bankAcount("12345"."Siam",12000);
+
+    BankAcount ac1 = new BankAcount("1234", "Masud", 12000);
+    ac1.display();
+    ac1.deposite(1200);
     
    }
 }
