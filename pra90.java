@@ -16,11 +16,19 @@ class EqualTriangle extends Triangle{
         System.out.println(0.5*h*l);
     }
 }
+class Circle extends Shape{
+
+    public void area(int a, int b){
+        System.out.println(0.5*a*b);
+    }
+}
 public class pra90 {
     public static void main (String[] args){
         Triangle t1 = new Triangle();
         t1.area(100, 50);
         EqualTriangle t2 = new EqualTriangle();
         t2.area(2, 3);
+        Circle c1 = new Circle();
+        c1.area(23, 12);
     }
 }
