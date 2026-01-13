@@ -1,6 +1,6 @@
 class student{
     String name;
-    int age;
+    int age
     student(String name ,int age){
         this.name = name ;
         this.age = age;
