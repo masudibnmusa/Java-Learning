@@ -1,10 +1,7 @@
 class calculator{
     int a ;
     int b;
-    calculator(int a , int b){
-        this.a = a;
-        this.b = b;
-    }
+    
 
     public int add(){
         int result = this.a+this.b;
@@ -29,7 +26,9 @@ class calculator{
 
 public class pra81 {
     public static void main(String[] args){
-        calculator c1 = new calculator(12,23);
+        calculator c1 = new calculator();
+        c1.a = 2;
+        c1.b = 1;
         System.out.println(c1.add()); 
         System.out.println(c1.sub()); 
         System.out.println(c1.multi()); 
