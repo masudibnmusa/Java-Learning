@@ -47,8 +47,6 @@ public class pra93 {
         s3.setroll(176);
         s3.setmarks(56.45);
 
-        s2.display();
-
-        
+        s2.display();       
     }  
 }
