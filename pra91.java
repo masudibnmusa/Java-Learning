@@ -21,4 +21,4 @@ public class pra91{
       Student s1 = new Student(171, "Masud", 98.5);
       s1.display();
    }
-}
+} 
