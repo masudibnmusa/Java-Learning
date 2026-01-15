@@ -13,10 +13,9 @@ class User{
         System.out.println(phone);
     }
 }
-class Rider extends User{
+class Ride {
     private double distance;
-    Rider(int id, String name ,String phone,double distance){
-        super(id, name, phone);
+    Ride(double distance){
         this.distance = distance;
     }
     public double getDistance(){
@@ -32,11 +31,17 @@ class Rider extends User{
     public void calculatefare(){
         System.out.println("The fare is: ");
     }
+}
+class Rider extends User{
+    Rider(int id, String name ,String phone){
+        super(id, name, phone);
+    }
+    
         
 }
-class BikeRide extends Rider{
-    BikeRide(int id,String name, String phone,double distance){
-        super(id, name, phone, distance);
+class BikeRide extends Ride{
+    BikeRide(double distance){
+        super(distance);
     }
     
     public void calculatefare(){
@@ -44,9 +49,9 @@ class BikeRide extends Rider{
         System.out.println("The fare is: "+fare);
     }
 }
-class CarRide extends Rider{
-    CarRide(int id, String name, String phone,double distance){
-        super(id, name, phone, distance);
+class CarRide extends Ride{
+    CarRide(double distance){
+        super(distance);
     }
     public void calculatefare(){
         double fare = getDistance()*35;
@@ -55,11 +60,15 @@ class CarRide extends Rider{
 }
 public class pra109 {
     public static void main(String[] args){
-        Rider r1 = new CarRide(171, "Masud", "01713504283", 0);
+        User u1 = new Rider(171, "Masud", "01713504283");
+        Ride r1 = new CarRide( 0);
+        u1.displayDetails();
         r1.setDistance(12);
         r1.calculatefare();
         System.out.println("----------------");
-        Rider r2 = new BikeRide(171, "Masud", "01713504283", 0);
+        User u2 = new Rider(171, "Masud", "01713504283");
+        Ride r2 = new BikeRide( 0);
+        u2.displayDetails();
         r2.setDistance(12);
         r2.calculatefare();
     }
