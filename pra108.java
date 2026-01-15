@@ -5,9 +5,15 @@ class User{
         this.username = username;
         this.password = password;
     }
+    public String getUsername(){
+        return username;
+    }
+    public int getPassword(){
+        return password;
+    }
     public void setUsername(String username){
-        if (username.equals(null)){
-            System.out.println("Username cant be");
+        if (username==null){
+            System.out.println("Username cant be empty");
         }else{
             this.username = username ;
         }
@@ -19,8 +25,13 @@ class User{
             this.password = password;
         }
     }
-    public void accesslevel(){
-        System.out.println("Welcome User");
+    public void accesslevel(int givenPassword){
+        if (givenPassword == password){
+            System.out.println("Welcome User");
+        }else{
+            System.out.println("Wrong password");
+        }
+        
     }
 
 }
@@ -28,32 +39,41 @@ class Admin extends User{
     Admin(String name, int password){
         super(name, password);
     }
-    public void accesslevel(){
-        System.out.println("Welcome Amin");
+    public void accesslevel(int givenPassword){
+        if (givenPassword == getPassword()){
+            System.out.println("Welcome Admin");
+        }else{
+            System.out.println("Wrong password");
+        }      
     }
-
 }
 class Customer extends User{
     Customer(String username,int password){
         super(username, password);
     }
-    public void accesslevel(){
-        System.out.println("Welcome Customer");
+    public void accesslevel(int givenPassword){
+        if (givenPassword == getPassword()){
+            System.out.println("Welcome Customer");
+            System.out.println(getUsername());
+        }else{
+            System.out.println("Wrong password");
+        }    
     }
+    
 }
 public class pra108 {
     public static void main(String[] args) {
         //main...
         User u1 = new Admin(null, 0);
         User u2 = new Customer(null, 0);
-        u1.setPassword(1234567);
+        u1.setPassword(12345);
         
         u1.setUsername("Masud");
         u1.setPassword(12345);
-        u1.accesslevel();
+        u1.accesslevel(12345);
         System.out.println("=============");
-        u2.setUsername("Teyab");
+        u2.setUsername("Shihab");
         u2.setPassword(1234);
-        u2.accesslevel();
+        u2.accesslevel(1234);
     }
 }
