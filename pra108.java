@@ -52,14 +52,17 @@ class Customer extends User{
         super(username, password);
     }
     public void accesslevel(int givenPassword){
-        if (givenPassword == getPassword()){
-            System.out.println("Welcome Customer");
-            System.out.println(getUsername());
+        if (getUsername()==null){
+            System.err.println("something went wrong");
         }else{
-            System.out.println("Wrong password");
-        }    
+            if (givenPassword==getPassword()){
+                System.out.println("Welcome Customer");
+                System.out.println(getUsername());
+            }else{
+                System.out.println("Wrong password");
+            }
+        }  
     }
-    
 }
 public class pra108 {
     public static void main(String[] args) {
@@ -72,7 +75,7 @@ public class pra108 {
         u1.setPassword(12345);
         u1.accesslevel(12345);
         System.out.println("=============");
-        u2.setUsername("Shihab");
+        u2.setUsername("shihab");
         u2.setPassword(1234);
         u2.accesslevel(1234);
     }
