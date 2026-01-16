@@ -60,10 +60,12 @@ class Appointment{
     Appointment(Doctor doctor,Patient patient){
         this.doctor = doctor;
         this.patient = patient ;
-        if (confee <0){
-            System.err.println("Invalid");
+        
+        double fee = doctor.getConfee();
+        if (fee<=0){
+            throw new IllegalArgumentException("Ivalid");
         }else{
-            this.confee = doctor.getConfee();
+            this.confee = fee;
         }
 
     }
