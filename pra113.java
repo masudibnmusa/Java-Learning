@@ -1,7 +1,11 @@
 abstract class Transport{
     protected double distance;
     Transport(double distance){
-        this.distance = distance;
+        if (distance <= 0){
+            throw new IllegalArgumentException("Distance must be positive");
+        }else{
+            this.distance = distance;
+        }
     }
     abstract void calFare();
 
