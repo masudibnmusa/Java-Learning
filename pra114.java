@@ -8,8 +8,8 @@ abstract class User{
         this.role = role;
     }
     void display(){
-        System.out.println(name);
-        System.out.println(role);
+        System.out.println("User name : "+name);
+        System.out.println("User role is : "+role);
     }
 }
 class Student extends User{
@@ -22,10 +22,10 @@ class Student extends User{
     }
     @Override
     void display(){
-        System.out.println(role);
-        System.out.println(roll);
-        System.out.println(name);
-        System.out.println(department);
+        System.out.println("User Role is : "+role);
+        System.out.println("Student roll is : "+roll);
+        System.out.println("Student name is : "+name);
+        System.out.println("Student's Department is : "+department);
     }
 }
 class Admin extends User{
@@ -54,9 +54,9 @@ class Course{
         }
     }
     public void displayCourse(){
-        System.out.println(code);
-        System.out.println(course);
-        System.out.println(credit);
+        System.out.println("Course code is : "+code);
+        System.out.println("Course Title is : "+course);
+        System.out.println("Course Credit is : "+credit);
     }
 }
 class Registration{
@@ -75,9 +75,13 @@ class Registration{
         User u1 = student;
         User u2 = admin;
         u1.display();
-        u2.display();
+        System.out.println();
+        
         Course c1 = course;
         c1.displayCourse();
+        System.out.println();
+        System.out.println("Regustration done by--");
+        u2.display();
         
     }
 }
