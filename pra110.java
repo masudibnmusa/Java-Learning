@@ -97,6 +97,10 @@ public class pra110 {
 
         Appointment app = new Appointment(d1, p1);
         app.displayAppointment();
+
+
+        p1.displayInfo();
+        
     }
 }
 
