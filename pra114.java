@@ -76,6 +76,8 @@ class Registration{
         User u2 = admin;
         u1.display();
         u2.display();
+        Course c1 = course;
+        c1.displayCourse();
         
     }
 }
