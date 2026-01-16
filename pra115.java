@@ -16,13 +16,15 @@ abstract  class Account {
     void withdraw(double ammount){
         if (ammount>0){
             bal -=ammount;
+            System.out.println("Widrawed ammount is : "+ammount);
         }else{
             System.err.println("Ammount must be greater than 1");
         }
     }
     void deposit(double ammount){
-        if (ammount<0){
+        if (ammount>0){
             bal +=ammount;
+            System.out.println("Deposited ammount is : "+ammount);
         }else{
             System.err.println("Ammount must be posistve!");
         }
@@ -47,8 +49,37 @@ class SavingAccount extends Account{
     }
 
 }
+class CurrentAccount extends Account{
+    CurrentAccount(int accNo,String name,double bal){
+        super(accNo, name, bal);
+    }
+    @Override
+    void checkBalance(){
+        super.checkBalance();
+    }
+    @Override
+    void deposit(double ammount){
+        super.deposit(ammount);
+    }
+    @Override
+    void withdraw(double ammount){
+        super.withdraw(ammount);
+        
+    }
+}
 public class pra115 {
     public static void main(String[]args){
         //main
+        Account[] accounts = {
+            new CurrentAccount(112, "Masud", 120000),
+            new SavingAccount(133, "Masud", 200000)
+
+        };
+        for (Account a1 : accounts){
+            a1.checkBalance();
+            a1.deposit(20000);
+            a1.withdraw(1000);
+            a1.checkBalance();
+        }
     }
 }
