@@ -35,6 +35,32 @@ class Admin extends User{
         super.display();
     }
 }
+class Course{
+    int code;
+    String course;
+    int credit;
+    Course(int code,String course,int credit){
+        this.code = code;
+        this.course = course;
+        this.credit = credit;
+    }
+    public void displayCourse(){
+        System.out.println(code);
+        System.out.println(course);
+        System.out.println(credit);
+    }
+}
+class Registration{
+    Student student;
+    Admin admin;
+    Course course;
+
+    Registration(Student student,Course course,Admin admin){
+        this.student = student;
+        this.course = course;
+        this.admin = admin;
+    }
+}
 public class pra114 {
     public static void main(String[] args) {
         //main
