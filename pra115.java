@@ -10,6 +10,41 @@ abstract  class Account {
         }
         this.bal = bal ;
     }
+    void checkBalance(){
+        System.out.println("Current Balance is : "+bal);
+    }
+    void withdraw(double ammount){
+        if (ammount>0){
+            bal -=ammount;
+        }else{
+            System.err.println("Ammount must be greater than 1");
+        }
+    }
+    void deposit(double ammount){
+        if (ammount<0){
+            bal +=ammount;
+        }else{
+            System.err.println("Ammount must be posistve!");
+        }
+    }
+
+}
+class SavingAccount extends Account{
+    SavingAccount(int accNo,String name,double bal){
+        super(accNo, name, bal);
+    }
+    @Override
+    void checkBalance(){
+        System.out.println("Current balance is : "+ bal);
+    }
+    @Override
+    void withdraw(double ammount){
+        super.withdraw(ammount);
+    }
+    @Override
+    void deposit(double ammount){
+        super.deposit(ammount);
+    }
 
 }
 public class pra115 {
