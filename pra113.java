@@ -43,12 +43,13 @@ class Metro extends Transport{
 public class pra113 {
     public static void main (String[] args){
         //main....
-        Transport t1 = new Bus(12);
-        Transport t2 = new Train(12);
-        Transport t3 = new Metro(12);
-
-        t1.calFare();
-        t2.calFare();
-        t3.calFare();
+        Transport[] transports = {
+            new Bus(12),
+            new Metro(12),
+            new Train(12)
+        };
+        for (Transport t1 :transports){
+            t1.calFare();
+        }
     }
 }
