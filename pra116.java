@@ -21,9 +21,48 @@ abstract class Device {
 } 
 class Light extends Device{
     private int brightness;
-    Light(int deviceId,String name,Double powerUsage){
-        super(deviceId, name, powerUsage);
+    Light(int deviceId,String name,int brightness){
+        super(deviceId, name, 60.00);
         this.brightness = brightness;
+    }
+    @Override
+    public void turnON(){
+        if (isOn){
+            System.out.println("Light is already on");
+        }else{
+            System.out.println("Light is on");
+        }
+    }
+    @Override
+    public void turnOff(){
+        if(!isOn){
+            System.out.println("Ligth is already off");
+        }else{
+            System.out.println("light is off");
+        }
+    }
+}
+class Fan extends Device{
+    private int speedLevel;
+    Fan(int deviceId,String name , int speedLevel){
+        super(deviceId, name, 120.00);
+        this.speedLevel= speedLevel;
+    }
+    @Override
+    public void turnON(){
+        if(isOn){
+            System.out.println("Fan is already on ");
+        }else{
+            System.out.println("Fan is on");
+        }
+    }
+    @Override
+    public void turnOff(){
+        if(!isOn){
+            System.out.println("Fan is already off");
+        }else{
+            System.out.println("Fan is off");
+        }
     }
 }
 public class pra116 {
