@@ -55,7 +55,15 @@ abstract class Order{
             this.baseAmmount= baseAmmount;
         }
     }
+    void calculateTotal(){
+        System.out.println("Total ammoutn is : ");
+    }
+    void deliveryCharge(){
+        double deliveryCharge = (distance*12);
+        System.out.println("Delivery Charge is : "+deliveryCharge);
+    }
     void displayOrder(){
+        System.out.println("Order detiils");
         System.out.println("Distance is : "+distance);
         System.out.println("Ammount is : "+baseAmmount);
     }
@@ -63,6 +71,11 @@ abstract class Order{
 class RestuarentOrder extends Order{
     RestuarentOrder(double distance ,int baseAmmount){
         super(distance, baseAmmount);
+    }
+    @Override
+    void deliveryCharge(){
+        double deliveryCharge = (distance*15);
+        System.out.println("Delivery charge for Restuarent order is : "+deliveryCharge);
     }
     @Override
     void displayOrder(){
@@ -74,12 +87,21 @@ class GroceryOrder extends Order{
         super(distance,baseAmmount);
     }
     @Override
+    void deliveryCharge(){
+        double deliveryCharge = (distance*18);
+        System.out.println("Delivery charge for Restuarent order is : "+deliveryCharge);
+    }
+    @Override
     void displayOrder(){
         super.displayOrder();
     }
 }
 public class pra117 {
     public static void main(String[] args) {
-        //main
+        User u1 = new Customer(1, "Masud", "01713504283");
+        User u2 = new DeliveryPartner(2, "Fahim", "019428723");
+        Order o1 = new GroceryOrder(12, 1200);
+        Order o2 = new RestuarentOrder(12, 12000);
+        
     }
 }
