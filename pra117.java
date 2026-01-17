@@ -79,6 +79,7 @@ class RestuarentOrder extends Order{
     }
     @Override
     void displayOrder(){
+        System.out.println("Restuarent");
         super.displayOrder();
     }
 }
@@ -93,6 +94,7 @@ class GroceryOrder extends Order{
     }
     @Override
     void displayOrder(){
+        System.out.println("Grocery");
         super.displayOrder();
     }
 }
@@ -101,7 +103,13 @@ public class pra117 {
         User u1 = new Customer(1, "Masud", "01713504283");
         User u2 = new DeliveryPartner(2, "Fahim", "019428723");
         Order o1 = new GroceryOrder(12, 1200);
-        Order o2 = new RestuarentOrder(12, 12000);
-        
+        Order o2 = new RestuarentOrder(12, 1300);
+        u1.showDetails();
+        System.out.println();
+        u2.showDetails();
+        System.out.println();
+        o1.displayOrder();
+        System.out.println();
+        o2.displayOrder();
     }
 }
