@@ -9,14 +9,24 @@ abstract class User{
     }
     abstract void accessCourse();
     void displayInfo(){
-        System.out.println("User Id    : "+id);
-        System.out.println("User Name  : "+name);
-        System.out.println("User Email : "+email);
+        System.out.println("Id    : "+id);
+        System.out.println("Name  : "+name);
+        System.out.println("Email : "+email);
     }
 }
 class Student extends User{
+    private Course[] enrolledCourse = new Course[5];
+    private int count = 0;
     Student(int id,String name,String email){
         super(id, name, email);
+    }
+    public void enroll(Course course){
+        if(count>=5){
+            System.out.println("Maximum 5 courses");
+            return;
+        }
+        enrolledCourse[count++] = course;
+        System.out.println("Enrolled in : course code "+course.cid);
     }
     @Override
     void accessCourse(){
@@ -32,6 +42,7 @@ class Instructor extends User{
     Instructor(int id,String name,String email){
         super(id, name, email);
     }
+    
     @Override
     void accessCourse(){
         System.out.println("Instructor has the access of ");
@@ -42,10 +53,10 @@ class Instructor extends User{
         super.displayInfo();
     }
 }
-class Course{
-    private int cid;
-    private String title;
-    private Instructor instructor;
+abstract class Course{
+    protected int cid;
+    protected String title;
+    protected Instructor instructor;
     Course(int cid,String title,Instructor instructor){
         this.cid = cid;
         this.title = title;
@@ -93,8 +104,14 @@ public class pra119 {
         //main
         Instructor i1 = new Instructor(001, "Masud", "masudibnmusa10@gmail.com");
         Instructor i2 = new Instructor(002, "Rakib", "rakibhasan@gmail.com");
+        Instructor i3 = new Instructor(002, "Sajid", "sajid@gmail.com");
+        Instructor i4 = new Instructor(002, "Siam", "siam@gmail.com");
+        Instructor i5 = new Instructor(002, "Amjad", "amjad@gmail.com");
         Course c1 = new FreeCourse(111, "Bangla", i1);
-        Course c2 = new PaidCourse(222, "English", i2, 1200.00);
+        Course c2 = new FreeCourse(111, "English", i2);
+        Course c3 = new PaidCourse(333, "Physics", i3, 1200.00);
+        Course c4 = new PaidCourse(444, "Math", i4, 1200.00);
+        Course c5 = new PaidCourse(555, "Chemistry", i5, 1200.00);
         
         c1.displayCourseInfo();
         System.out.println();
@@ -103,5 +120,33 @@ public class pra119 {
         c2.displayCourseInfo();
         System.out.println();
         i2.displayInfo();
+        System.out.println();
+        c3.displayCourseInfo();
+        System.out.println();
+        i3.displayInfo();
+        System.out.println();
+        c4.displayCourseInfo();
+        System.out.println();
+        i4.displayInfo();
+        System.out.println();
+        c5.displayCourseInfo();
+        System.out.println();
+        i5.displayInfo();
+        System.out.println();
+
+
+        System.out.println("==============================");
+        Student s1 = new Student(1, "Shihab", "shihab@gmail.com");
+        
+        System.out.println();
+        s1.displayInfo();
+        s1.enroll(c1);
+        s1.enroll(c2);
+        s1.enroll(c3);
+        s1.enroll(c4);
+        s1.enroll(c5);
+        s1.enroll(c3);
+
+
     }
 }

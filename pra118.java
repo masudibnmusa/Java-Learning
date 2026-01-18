@@ -16,30 +16,27 @@ abstrac class User{
         System.out.println("Email :"+email);
     }
 }
-class Student extends User{
-    private Course[] enrolledCourse = new Course[5];
-    int count = 0;
-    Student(int id,String name,String email){
-        super(id,name,email);
+class Student extends User {
+    private Course[] enrolledCourses = new Course[5];
+    private int count = 0;
+
+    Student(int id, String name) {
+        super(id, name);
     }
-    public void enroll(Course course){
-        if (count>=5){
-            System.out.println("Maximum 5 course");
+
+    // 🔥 POLYMORPHIC ENROLLMENT
+    public void enroll(Course course) {
+        if (count >= 5) {
+            System.out.println("Cannot enroll more than 5 courses");
             return;
         }
-        enrolledCourse[count++] = course;
+        enrolledCourses[count++] = course;
+        System.out.println(name + " enrolled in " + course.title);
     }
+
     @Override
-    void displayInfo(){
-        System.out.println("Student");
-        System.out.println("Id    :"+id);
-        System.out.println("Name  :"+name);
-        System.out.println("Email :"+email);
-    }
-    @Override
-    void accessCourse(Course course){
-        course.getAccess();
-        System.out.println("Course enrolled in : "+course.getTitle());
+    void accessCourse(Course course) {
+        System.out.println("Student accessing course: " + course.title);
     }
 }
 class Instructor extends User{
@@ -48,7 +45,7 @@ class Instructor extends User{
     }
     public Course createCourse(String type, int courseId, String title, double price) {
         if (type.equalsIgnoreCase("paid")) {
-            return new PaidCourse(courseId, title, price);
+            return new PaidCourse(courseId, title,this, price);
         } else {
             return new FreeCourse(courseId, title);
         }
