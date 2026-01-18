@@ -35,8 +35,8 @@ class DeliveryPartner extends User{
     }
 }
 abstract class Order{
-    protected double distance;
-    protected int baseAmmount;
+    private double distance;
+    private int baseAmmount;
     Order(double distance,int baseAmmount){
         setDistance(distance);
         setBaseammount(baseAmmount);
@@ -67,6 +67,12 @@ abstract class Order{
         System.out.println("Distance is : "+distance);
         System.out.println("Ammount is : "+baseAmmount);
     }
+    int getBaseammount(){
+        return baseAmmount;
+    }
+    double getDistance(){
+        return distance;
+    }
 }
 class RestuarentOrder extends Order{
     RestuarentOrder(double distance ,int baseAmmount){
@@ -74,7 +80,7 @@ class RestuarentOrder extends Order{
     }
     @Override
     double deliveryCharge(){
-        return (distance*15);
+        return (getDistance()*15);
     }
 
     @Override
@@ -89,7 +95,7 @@ class GroceryOrder extends Order{
     }
     @Override
     double deliveryCharge(){
-        return (distance*18);
+        return (getDistance()*18);
     }
     @Override
     void displayOrder(){
@@ -128,7 +134,7 @@ class ShowOrder{
         o2.displayOrder();
         System.out.println("Delivery Charge for Grocery Order is : "+o2.deliveryCharge());
         System.out.println();
-        totalAmmount = o1.baseAmmount+o2.baseAmmount+o1.deliveryCharge()+o2.deliveryCharge();
+        totalAmmount = o1.getBaseammount()+o2.getBaseammount()+o1.deliveryCharge()+o2.deliveryCharge();
         System.out.println("Total amamount is : "+totalAmmount);
     }
 }
