@@ -24,7 +24,7 @@ class Student extends User{
     }
     @Override
     void displayInfo(){
-        System.out.println("Student");
+        System.out.println("Student Info---");
         super.displayInfo();
     }
 }
@@ -38,7 +38,7 @@ class Instructor extends User{
     }
     @Override
     void displayInfo(){
-        System.out.println("Instructor");
+        System.out.println("Instructor Info---");
         super.displayInfo();
     }
 }
@@ -74,7 +74,7 @@ class PaidCourse extends Course{
     }
     @Override
     void displayCourseInfo(){
-        System.out.println("Paid Course");
+        System.out.println("______Paid Course______");
         super.displayCourseInfo();
     }
 }
@@ -84,7 +84,7 @@ class FreeCourse extends Course{
     }
     @Override
     void displayCourseInfo(){
-        System.out.println("Free Course");
+        System.out.println("______Free Course_______");
         super.displayCourseInfo();
     }
 }
@@ -92,9 +92,16 @@ public class pra119 {
     public static void main(String[] args){
         //main
         Instructor i1 = new Instructor(001, "Masud", "masudibnmusa10@gmail.com");
+        Instructor i2 = new Instructor(002, "Rakib", "rakibhasan@gmail.com");
         Course c1 = new FreeCourse(111, "Bangla", i1);
-        Course c2 = new PaidCourse(222, "English", null, 0);
+        Course c2 = new PaidCourse(222, "English", i2, 1200.00);
         
         c1.displayCourseInfo();
+        System.out.println();
+        i1.displayInfo();
+        System.out.println();
+        c2.displayCourseInfo();
+        System.out.println();
+        i2.displayInfo();
     }
 }
