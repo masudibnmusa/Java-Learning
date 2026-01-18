@@ -1,4 +1,4 @@
-private class User{
+abstrac class User{
     protected int id;
     protected String name;
     protected String email;
@@ -129,7 +129,7 @@ public class pra118 {
         student.enroll(c2);
 
         System.out.println();
-        student.accessCourse(c1); // polymorphism
-        student.accessCourse(c2); // polymorphism
+        student.accessCourse(c1); 
+        student.accessCourse(c2); 
     }
 }
