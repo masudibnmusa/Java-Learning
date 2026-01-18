@@ -57,12 +57,44 @@ class Course{
     void displayCourseInfo(){
         System.out.println("Course id         : "+cid);
         System.out.println("Course Title      : "+title);
-        System.out.println("Course Instructor : "+instructor);
+        System.out.println("Course Instructor : "+instructor.name);
     }
 }
-class 
+class PaidCourse extends Course{
+    private double price;
+    PaidCourse(int cid,String title,Instructor instructor,double price){
+        super(cid, title, instructor);
+        if (price<0){
+            throw new IllegalArgumentException("price cant be negative");
+        }
+        this.price = price;
+    }
+    double getPrice(){
+        return price;
+    }
+    @Override
+    void displayCourseInfo(){
+        System.out.println("Paid Course");
+        super.displayCourseInfo();
+    }
+}
+class FreeCourse extends Course{
+    FreeCourse(int cid,String title,Instructor instructor){
+        super(cid, title, instructor);
+    }
+    @Override
+    void displayCourseInfo(){
+        System.out.println("Free Course");
+        super.displayCourseInfo();
+    }
+}
 public class pra119 {
     public static void main(String[] args){
         //main
+        Instructor i1 = new Instructor(001, "Masud", "masudibnmusa10@gmail.com");
+        Course c1 = new FreeCourse(111, "Bangla", i1);
+        Course c2 = new PaidCourse(222, "English", null, 0);
+        
+        c1.displayCourseInfo();
     }
 }
