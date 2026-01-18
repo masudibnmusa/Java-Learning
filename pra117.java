@@ -65,7 +65,7 @@ abstract class Order{
     void displayOrder(){
         System.out.println("Order detiils");
         System.out.println("Distance is : "+distance);
-        System.out.println("Ammount is : "+baseAmmount);
+        System.out.println("Ammount is  : "+baseAmmount);
     }
     int getBaseammount(){
         return baseAmmount;
@@ -117,7 +117,7 @@ class ShowOrder{
     }
     public void getShoworder(){
         double totalAmmount ;
-        System.out.println("Order Details");
+        System.out.println("=========Order Details=========");
         System.out.println();
         User u1 = customer;
         User u2 = deliveryPartner;
@@ -125,17 +125,17 @@ class ShowOrder{
         Order o2 = restuarentOrder;
 
         u1.showDetails();
-        System.out.println();
+        System.out.println("--------------------------------");
         u2.showDetails();
-        System.out.println();
+        System.out.println("--------------------------------");
         o1.displayOrder();
-        System.out.println("Delivery Charge for Grocery Order is : "+o1.deliveryCharge());
-        System.out.println();
+        System.out.println("Delivery Charge for Grocery Order is    : "+o1.deliveryCharge());
+        System.out.println("--------------------------------");
         o2.displayOrder();
-        System.out.println("Delivery Charge for Grocery Order is : "+o2.deliveryCharge());
-        System.out.println();
+        System.out.println("Delivery Charge for Restuarent Order is : "+o2.deliveryCharge());
+        System.out.println("---------------------------------");
         totalAmmount = o1.getBaseammount()+o2.getBaseammount()+o1.deliveryCharge()+o2.deliveryCharge();
-        System.out.println("Total amamount is : "+totalAmmount);
+        System.out.println("Total payable ammout is : "+totalAmmount);
     }
 }
 public class pra117 { 
