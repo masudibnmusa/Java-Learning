@@ -31,7 +31,10 @@ class Student extends User{
     }
     @Override
     void displayInfo(){
-        super.displayInfo();
+        System.out.println("Student");
+        System.out.println("Id    :"+id);
+        System.out.println("Name  :"+name);
+        System.out.println("Email :"+email);
     }
     @Override
     void accessCourse(Course course){
@@ -41,7 +44,7 @@ class Student extends User{
 }
 class Instructor extends User{
     Instructor(int id,String name ,String email){
-        super(id, name, name);
+        super(id, name, email);
     }
     public Course createCourse(String type, int courseId, String title, double price) {
         if (type.equalsIgnoreCase("paid")) {
@@ -52,13 +55,17 @@ class Instructor extends User{
     }
     @Override
     void displayInfo(){
-        super.displayInfo();
+        System.out.println("Instrutor");
+        System.out.println("Id    :"+id);
+        System.out.println("Name  :"+name);
+        System.out.println("Email :"+email);
     }
     @Override
     void accessCourse(Course course){
         System.out.println("Instructor has fully access to "+course.getTitle());
     }
 }
+
 abstract class Course {
     protected int courseId;
     protected String title;
@@ -79,8 +86,50 @@ abstract class Course {
         System.out.println("Instructor   : "+instructor.name);
     }
 }
+class FreeCourse extends Course{
+    FreeCourse(int courseId,String title,Instructor instructor){
+        super(courseId,title,instructor);
+    }
+    @Override
+    void getAccess(){
+        System.out.println("Access granted to : "+title);
+    }
+}
+class PaidCourse extends Course{
+    double price ;
+    PaidCourse(int courseId,String title,Instructor instructor,double price){
+        super(courseId,title,instructor);
+        if(price <= 0){
+            System.err.println("Price cant be negative");
+        }else{
+            this.price = price;
+        }
+    }
+    double getPrice(){
+        return price;
+    }
+    @Override
+    void getAccess(){
+        System.out.println("Access granted after payment is : "+title);
+    }
+
+}
 public class pra118 {
     public static void main(String[] args){
-        //main
+        Instructor instructor =
+                new Instructor(1, "Masud", "masud@edu.com");
+
+        Student student =
+                new Student(101, "Mahim", "mahim@student.com");
+
+        Course c1 = instructor.createCourse("free", 201, "Java Basics", 0);
+        Course c2 = instructor.createCourse("paid", 202, "Advanced Java", 1500);
+
+        student.enroll(c1);
+        student.enroll(c2);
+
+        System.out.println();
+        student.accessCourse(c1); // polymorphism
+        student.accessCourse(c2); // polymorphism
     }
 }
