@@ -58,9 +58,9 @@ abstract class Order{
     void calculateTotal(){
         System.out.println("Total ammoutn is : ");
     }
-    void deliveryCharge(){
-        double deliveryCharge = (distance*12);
-        System.out.println("Delivery Charge is : "+deliveryCharge);
+    double deliveryCharge(){
+        return  (distance*12);
+        
     }
     void displayOrder(){
         System.out.println("Order detiils");
@@ -73,10 +73,10 @@ class RestuarentOrder extends Order{
         super(distance, baseAmmount);
     }
     @Override
-    void deliveryCharge(){
-        double deliveryCharge = (distance*15);
-        System.out.println("Delivery charge for Restuarent order is : "+deliveryCharge);
+    double deliveryCharge(){
+        return (distance*15);
     }
+
     @Override
     void displayOrder(){
         System.out.println("Restuarent");
@@ -88,9 +88,8 @@ class GroceryOrder extends Order{
         super(distance,baseAmmount);
     }
     @Override
-    void deliveryCharge(){
-        double deliveryCharge = (distance*18);
-        System.out.println("Delivery charge for Restuarent order is : "+deliveryCharge);
+    double deliveryCharge(){
+        return (distance*18);
     }
     @Override
     void displayOrder(){
@@ -99,10 +98,10 @@ class GroceryOrder extends Order{
     }
 }
 class ShowOrder{
-    Customer customer;
-    DeliveryPartner deliveryPartner;
-    GroceryOrder groceryOrder;
-    RestuarentOrder restuarentOrder;
+    private Customer customer;
+    private DeliveryPartner deliveryPartner;
+    private GroceryOrder groceryOrder;
+    private RestuarentOrder restuarentOrder;
     
     ShowOrder(Customer customer,DeliveryPartner deliveryPartner,GroceryOrder groceryOrder,RestuarentOrder restuarentOrder){
         this.customer = customer;
@@ -111,6 +110,7 @@ class ShowOrder{
         this.restuarentOrder = restuarentOrder;
     }
     public void getShoworder(){
+        double totalAmmount ;
         System.out.println("Order Details");
         System.out.println();
         User u1 = customer;
@@ -123,16 +123,21 @@ class ShowOrder{
         u2.showDetails();
         System.out.println();
         o1.displayOrder();
+        System.out.println("Delivery Charge for Grocery Order is : "+o1.deliveryCharge());
         System.out.println();
         o2.displayOrder();
+        System.out.println("Delivery Charge for Grocery Order is : "+o2.deliveryCharge());
+        System.out.println();
+        totalAmmount = o1.baseAmmount+o2.baseAmmount+o1.deliveryCharge()+o2.deliveryCharge();
+        System.out.println("Total amamount is : "+totalAmmount);
     }
 }
 public class pra117 { 
     public static void main(String[] args) {
-        Customer c1 = new Customer(0, null, null);
-        DeliveryPartner d1 = new DeliveryPartner(0, null, null);
-        GroceryOrder g1 = new GroceryOrder(0, 0);
-        RestuarentOrder r1 = new RestuarentOrder(0, 0);
+        Customer c1 = new Customer(303, "Masud", "01713504283");
+        DeliveryPartner d1 = new DeliveryPartner(202, "Mahim", "01912428723");
+        GroceryOrder g1 = new GroceryOrder(12, 1600);
+        RestuarentOrder r1 = new RestuarentOrder(16, 890);
 
         ShowOrder s1 = new ShowOrder(c1, d1, g1, r1);
         s1.getShoworder();
