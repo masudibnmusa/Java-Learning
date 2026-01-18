@@ -9,8 +9,8 @@ abstract class User{
     }
     void showDetails(){
         System.out.println("User Details");
-        System.out.println("Id : "+id);
-        System.out.println("Name : "+name);
+        System.out.println("Id    : "+id);
+        System.out.println("Name  : "+name);
         System.out.println("Phone : "+phone);
     };
 }
@@ -98,12 +98,26 @@ class GroceryOrder extends Order{
         super.displayOrder();
     }
 }
-public class pra117 {
-    public static void main(String[] args) {
-        User u1 = new Customer(1, "Masud", "01713504283");
-        User u2 = new DeliveryPartner(2, "Fahim", "019428723");
-        Order o1 = new GroceryOrder(12, 1200);
-        Order o2 = new RestuarentOrder(12, 1300);
+class ShowOrder{
+    Customer customer;
+    DeliveryPartner deliveryPartner;
+    GroceryOrder groceryOrder;
+    RestuarentOrder restuarentOrder;
+    
+    ShowOrder(Customer customer,DeliveryPartner deliveryPartner,GroceryOrder groceryOrder,RestuarentOrder restuarentOrder){
+        this.customer = customer;
+        this.deliveryPartner = deliveryPartner;
+        this.groceryOrder = groceryOrder;
+        this.restuarentOrder = restuarentOrder;
+    }
+    public void getShoworder(){
+        System.out.println("Order Details");
+        System.out.println();
+        User u1 = customer;
+        User u2 = deliveryPartner;
+        Order o1 = groceryOrder;
+        Order o2 = restuarentOrder;
+
         u1.showDetails();
         System.out.println();
         u2.showDetails();
@@ -111,5 +125,16 @@ public class pra117 {
         o1.displayOrder();
         System.out.println();
         o2.displayOrder();
+    }
+}
+public class pra117 { 
+    public static void main(String[] args) {
+        Customer c1 = new Customer(0, null, null);
+        DeliveryPartner d1 = new DeliveryPartner(0, null, null);
+        GroceryOrder g1 = new GroceryOrder(0, 0);
+        RestuarentOrder r1 = new RestuarentOrder(0, 0);
+
+        ShowOrder s1 = new ShowOrder(c1, d1, g1, r1);
+        s1.getShoworder();
     }
 }
