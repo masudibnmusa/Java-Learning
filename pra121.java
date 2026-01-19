@@ -22,11 +22,15 @@ abstract class Wallet{
         }
     }
     void transferAmount(double amount){
-        if (amount>0){
+        if(amount<0){
+            System.out.println("Transfer amount must be positive");
+            return;
+        }
+        if(bal-amount > 200){
             bal -=amount;
-            System.out.println(amount+" taka is successfully trasfered");
+            System.out.println(amount+" is successfully transfered !");
         }else{
-            System.out.println("transferable amount cant be negative");
+            System.out.println("You dont have sufficient money to perform this action");
         }
         
     }
@@ -74,7 +78,7 @@ public class pra121 {
     public static void main(String[]args){
         //main
         Wallet w1 = new MobileWallet(11112222, "Masud", 20000);
-        Wallet w2 = new CryptoWallet(33332222, "Mahin", 33000);
+        Wallet w2 = new CryptoWallet(33332222, "Mahin", 200);
         w1.addBal(200);
         w1.transferAmount(3000);
         w1.walletInfo();
