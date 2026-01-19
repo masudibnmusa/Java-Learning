@@ -79,8 +79,8 @@ class Appointment {
     public void displayAppointment() {
         System.out.println("\n--- Appointment Details ---");
 
-        Person p1 = doctor;   // Polymorphism
-        Person p2 = patient;  // Polymorphism
+        Person p1 = doctor;   
+        Person p2 = patient;  
 
         p1.displayInfo();
         System.out.println();

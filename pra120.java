@@ -8,7 +8,7 @@ abstract class Room{
     }
     void displayRoom(){
         System.out.println("Room number : "+roomNo);
-        System.out.println("Room Type : "+roomType);
+        System.out.println("Room Type   : "+roomType);
     }
 }
 class StandardRoom extends Room{
@@ -47,7 +47,7 @@ class Reservation {
     Reservation(String roomType,int days){
         this.roomType = roomType;
         if(days<=0){
-            throw new IllegalArgumentException("Minimum booking days id 1");
+            throw new IllegalArgumentException("Minimum booking days is 1");
         }
         this.days = days;
     }
@@ -58,7 +58,7 @@ class Reservation {
             case "delux" :
                 return days*2500;
             case "suit" :
-                return days *3000;
+                return days*3000;
             default:
                 return 2000;
         }
@@ -72,7 +72,6 @@ class Reservation {
         switch (roomType.toLowerCase()){
             case "standard":
                 r1.displayRoom();
-                
                 break;
             case "delux" :
                 r2.displayRoom();
