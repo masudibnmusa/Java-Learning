@@ -22,7 +22,13 @@ abstract class Wallet{
         }
     }
     void transferAmount(double amount){
-        System.out.println(amount+" taka is successfully trasfered");
+        if (amount>0){
+            bal -=amount;
+            System.out.println(amount+" taka is successfully trasfered");
+        }else{
+            System.out.println("transferable amount cant be negative");
+        }
+        
     }
     void walletInfo(){
         System.out.println("Wallet Id       : "+walletId);
@@ -67,5 +73,14 @@ class CryptoWallet extends Wallet{
 public class pra121 {
     public static void main(String[]args){
         //main
+        Wallet w1 = new MobileWallet(11112222, "Masud", 20000);
+        Wallet w2 = new CryptoWallet(33332222, "Mahin", 33000);
+        w1.addBal(200);
+        w1.transferAmount(3000);
+        w1.walletInfo();
+        System.out.println();
+        w2.addBal(200);
+        w2.transferAmount(3000);
+        w2.walletInfo();
     }
 }
