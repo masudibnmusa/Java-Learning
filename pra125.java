@@ -47,6 +47,46 @@ class SickLeave extends Leave{
         System.out.println("Cause of leave : "+leaveType);
     }
 }
+class Employee{
+    private int id;
+    private String name;
+    private String email;
+    Employee(int id,String name,String email){
+        setid(id);
+        this.name = name;
+        this.email = email;
+    }
+    void setid(int id){
+        if(id<0){
+            throw new IllegalArgumentException("Id can't be negative");
+        }
+        this.id = id;
+    }
+    int getId(){
+        return id;
+    }
+    String getName(){
+        return name;
+    }
+    String getEmail(){
+        return email;
+    }
+    void displayEmployeeinfo(){
+        System.out.println("Employee Id    : "+getId());
+        System.out.println("Employee name  : "+getName());
+        System.out.println("Employee Email : "+getEmail());
+    }
+} 
 public class pra125 {
+    public static void main(String[] args) {
+        Leave l1 = new SickLeave(101, "Masud", 2); 
+        Leave l2 = new CasualLeavae(101, "Masud", 3);
+        l1.showLeavedetails();
+        System.out.println();
+        l2.showLeavedetails();
+        System.out.println();
+        Employee e1 = new Employee(101, "Masud", "masudibnmusa10@gamil.com");
+        e1.displayEmployeeinfo();
+    }
     //main
 }
