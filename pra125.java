@@ -1,10 +1,10 @@
 abstract class Leave{
     protected int id;
-    protected String name;
+    protected Employee employee;
     protected int time;
-    Leave(int id,String name,int time){
+    Leave(int id,Employee employee,int time){
         setId(id);
-        this.name = name ;
+        this.employee = employee;
         setTime(time);
     }
     void setTime(int time){
@@ -21,14 +21,14 @@ abstract class Leave{
     }
     void showLeavedetails(){
         System.out.println("Employee Id   : "+id);
-        System.out.println("Employee name : "+name);
+        System.out.println("Employee name : "+employee.getName());
         System.out.println("Time of leave : "+time);
     }  
 }
 class CasualLeavae extends Leave{
     private String leaveType = "Casual Leave";
-    CasualLeavae(int id,String name,int time){
-        super(id, name, time);
+    CasualLeavae(int id,Employee employee,int time){
+        super(id, employee, time);
     }
     @Override
     void showLeavedetails(){
@@ -38,8 +38,8 @@ class CasualLeavae extends Leave{
 }
 class SickLeave extends Leave{
     private String leaveType = "Sick Leave";
-    SickLeave(int id,String name,int time){
-        super(id, name, time);
+    SickLeave(int id,Employee employee,int time){
+        super(id, employee, time);
     }
     @Override
     void showLeavedetails(){
@@ -51,10 +51,12 @@ class Employee{
     private int id;
     private String name;
     private String email;
-    Employee(int id,String name,String email){
+    private String position;
+    Employee(int id,String name,String email,String position){
         setid(id);
         this.name = name;
         this.email = email;
+        this.position = position;
     }
     void setid(int id){
         if(id<0){
@@ -71,22 +73,31 @@ class Employee{
     String getEmail(){
         return email;
     }
+    String getPosition(){
+        return position;
+    }
     void displayEmployeeinfo(){
-        System.out.println("Employee Id    : "+getId());
-        System.out.println("Employee name  : "+getName());
-        System.out.println("Employee Email : "+getEmail());
+        System.out.println("Employee Id       : "+getId());
+        System.out.println("Employee name     : "+getName());
+        System.out.println("Employee Email    : "+getEmail());
+        System.out.println("Employee position : "+getPosition());
     }
 } 
 public class pra125 {
     public static void main(String[] args) {
-        Leave l1 = new SickLeave(101, "Masud", 2); 
-        Leave l2 = new CasualLeavae(101, "Masud", 3);
+        Employee e1 = new Employee(101, "Masud", "masudibnmusa10@gamil.com","Manager");
+        Employee e2 = new Employee(102, "Mahin", "mahinkhan@gamil.com","Senior Software Engineer");
+        Leave l1 = new SickLeave(101, e1, 2);
+        Leave l2 = new SickLeave(102, e2, 5);
+        System.out.println("Leave and Employee details");
         l1.showLeavedetails();
         System.out.println();
+        e1.displayEmployeeinfo();
+        System.out.println();
+        System.out.println("Leave and Employee details");
         l2.showLeavedetails();
         System.out.println();
-        Employee e1 = new Employee(101, "Masud", "masudibnmusa10@gamil.com");
-        e1.displayEmployeeinfo();
+        e2.displayEmployeeinfo();
     }
     //main
 }
