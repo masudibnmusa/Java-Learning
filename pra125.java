@@ -3,7 +3,7 @@ abstract class Leave{
     protected String name;
     protected int time;
     Leave(int id,String name,int time){
-        this.id = id ;
+        setId(id);
         this.name = name ;
         setTime(time);
     }
@@ -23,8 +23,29 @@ abstract class Leave{
         System.out.println("Employee Id   : "+id);
         System.out.println("Employee name : "+name);
         System.out.println("Time of leave : "+time);
+    }  
+}
+class CasualLeavae extends Leave{
+    private String leaveType = "Casual Leave";
+    CasualLeavae(int id,String name,int time){
+        super(id, name, time);
     }
-    
+    @Override
+    void showLeavedetails(){
+        super.showLeavedetails();
+        System.out.println("Cause of leave : "+leaveType);
+    }
+}
+class SickLeave extends Leave{
+    private String leaveType = "Sick Leave";
+    SickLeave(int id,String name,int time){
+        super(id, name, time);
+    }
+    @Override
+    void showLeavedetails(){
+        super.showLeavedetails();
+        System.out.println("Cause of leave : "+leaveType);
+    }
 }
 public class pra125 {
     //main
