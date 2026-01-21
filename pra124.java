@@ -4,10 +4,43 @@ abstract class  Ticket{
     protected int numOfSeat;
     protected double distance ;
     Ticket(int serialNo,String type,int numOfSeat,double distance){
-        this.serialNo = serialNo;
-        this.type = type ;
-        this.numOfSeat =  numOfSeat;
+        setSerialNumber(serialNo);
+        setType(type);
+        setNumofSeat(numOfSeat);
+        setDistance(distance);
+    }
+    void setDistance(double distance){
+        if (distance<0){
+            throw new IllegalArgumentException("Distance cant be negative");
+        }
         this.distance = distance;
+    }
+    void setSerialNumber(int serialNo){
+        if(serialNo<0){
+            throw new IllegalArgumentException("Invalid serial number");
+        }
+        this.serialNo = serialNo;
+    }
+    void setType(String type){
+        switch (type.toLowerCase()){
+            case "bus":
+                this.type = type;
+                break;
+            case "train":
+                this.type = type;
+                break;
+            case "flight" :
+                this.type = type;
+                break;
+            default:
+                throw new IllegalArgumentException("There is ticket type with given name");
+        }
+    }
+    void setNumofSeat(int numOfSeat){
+        if(numOfSeat<0){
+            throw new IllegalArgumentException("number of seat cant be negative");
+        }
+        this.numOfSeat =  numOfSeat;
     }
     double calculateTicketprice(){
         return distance*12;
@@ -71,5 +104,15 @@ public class pra124 {
         t2.showTicket();
         System.out.println();
         t3.showTicket();
+        System.out.println();
+        Ticket [] tickets = {
+            new BusTicket(4, "Bus", 5, 135),
+            new TrainTicket(5, "Train", 4, 135),
+            new FlightTicket(6, "Flight", 2, 324)
+        };
+        for(Ticket t4 :tickets){
+            t4.showTicket();
+            System.out.println();
+        }
     }
 }
