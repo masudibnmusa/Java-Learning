@@ -89,12 +89,11 @@ public class pra125 {
         Employee e2 = new Employee(102, "Mahin", "mahinkhan@gamil.com","Senior Software Engineer");
         Leave l1 = new SickLeave(101, e1, 2);
         Leave l2 = new SickLeave(102, e2, 5);
-        System.out.println("Leave and Employee details");
         l1.showLeavedetails();
         System.out.println();
         e1.displayEmployeeinfo();
         System.out.println();
-        System.out.println("Leave and Employee details");
+        System.out.println("Leave and Employee deta");
         l2.showLeavedetails();
         System.out.println();
         e2.displayEmployeeinfo();
