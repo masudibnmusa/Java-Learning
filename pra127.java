@@ -71,5 +71,11 @@ class ElectricalItem extends Items{
 public class pra127 {
     public static void main(String[] args) {
         // main
+        Items i1 = new ElectricalItem(102, "Fan", 2);
+        Items i2 = new Perishable(101, "Sugar Canal", 5, "22-12-22");
+        i1.displayInfo();
+        System.out.println(i1.isSelleble(true));
+        i2.displayInfo();
+        i2.isSelleble(false);
     }
 }
