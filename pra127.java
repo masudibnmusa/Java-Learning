@@ -2,7 +2,7 @@ abstract class Items {
     protected int id;
     protected String name;
     protected int quantity;
-    protected boolean isSelleble = false;
+    protected boolean isSelleble;
 
     Items(int id, String name, int quality) {
         this.id = id;
@@ -35,6 +35,9 @@ class Perishable extends Items {
         super(id, name, quantity);
         this.expireDate = expireDate;
     }
+    void setSellable(boolean issellable) {
+    this.isSellable = Sellable;
+    }
 
     @Override
     void displayInfo() {
@@ -63,7 +66,7 @@ class ElectricalItem extends Items{
         System.out.println("Item Id          : " + id);
         System.out.println("Item Name        : " + name);
         System.out.println("Item Quantity    : " + quantity);
-        if(isSelleble(isSelleble)==true){
+        if(isSelleble()){
             System.out.println("The product is Sellable");
         }else{
             System.out.println("The product is not sellable");
