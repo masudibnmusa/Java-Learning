@@ -35,26 +35,13 @@ class Perishable extends Items {
         super(id, name, quantity);
         this.expireDate = expireDate;
     }
-    void setSellable(boolean issellable) {
-    this.isSellable = Sellable;
-    }
-
+    
     @Override
     void displayInfo() {
         System.out.println("Item Id          : " + id);
         System.out.println("Item Name        : " + name);
         System.out.println("Item Quantity    : " + quantity);
         System.out.println("Item Expire Date : " + expireDate);
-        if(isSelleble(isSelleble)==true){
-            System.out.println("The product is Sellable");
-        }else{
-            System.out.println("The product is not sellable");
-        }
-    }
-
-    @Override
-    boolean isSelleble(boolean isSelleble) {
-        return isSelleble;
     }
 }
 class ElectricalItem extends Items{
@@ -66,15 +53,6 @@ class ElectricalItem extends Items{
         System.out.println("Item Id          : " + id);
         System.out.println("Item Name        : " + name);
         System.out.println("Item Quantity    : " + quantity);
-        if(isSelleble()){
-            System.out.println("The product is Sellable");
-        }else{
-            System.out.println("The product is not sellable");
-        }
-    }
-    @Override
-    boolean isSelleble(boolean isSelleble){
-        return isSelleble;
     }
 }
 
@@ -83,10 +61,8 @@ public class pra127 {
         // main
         Items i1 = new ElectricalItem(102, "Fan", 2);
         Items i2 = new Perishable(101, "Sugar Canal", 5, "22-12-22");
-        i1.isSelleble(true);
         i1.displayInfo();
         System.out.println();
-        i2.isSelleble(false);
         i2.displayInfo();
         
     }
