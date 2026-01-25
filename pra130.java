@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 abstract class Vehicle{
     protected String brand;
     protected int speed;
@@ -49,31 +51,35 @@ class Bike extends Vehicle{
         System.out.println("Price of the Car : "+basePrice);
     }
 }
-class Rental{
-    void displayRentalinfo(){
-        Vehicle [] vehicles ={
-            new Bike("Tata", 170, 170000),
-            new Car("TaTa", 240, 1200000)
-        };
-        for(Vehicle v1 :vehicles){
-            v1.display();
-            System.out.println();
-        }
-    }
-}
 class Customer{
     int id;
     String name;
-    Rental rental;
-    Customer(int id,String name,Rental rental){
+    String email;
+    Customer(int id,String name,String email){
         this.id = id;
         this.name = name;
-        this.rental = rental;
+        this.email = email;
     }
     void displayCutomerInfo(){
-        System.out.println("Customer Id : "+id);
-        System.out.println("Customer Name : "+name);
-        rental.displayRentalinfo();
+        System.out.println("Customer Id    : "+id);
+        System.out.println("Customer Name  : "+name);
+        System.out.println("Customer Email : "+email);
+    }
+}
+class Rental{
+    int id;
+    LocalDate rentalDate;
+    Vehicle vehicle;
+    Rental(int id,String rentalDate,Vehicle vehicle){
+        setId(id);
+        this.rentalDate = rentalDate;
+        this.vehicle = vehicle;
+    }
+    void setId(int id){
+        if(id<=0){
+            throw new IllegalArgumentException("Id cant be negative");
+        }
+        this.id = id;
     }
 }
  public class pra130 {
