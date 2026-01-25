@@ -61,10 +61,27 @@ class Rental{
         }
     }
 }
+class Customer{
+    int id;
+    String name;
+    Rental rental;
+    Customer(int id,String name,Rental rental){
+        this.id = id;
+        this.name = name;
+        this.rental = rental;
+    }
+    void displayCutomerInfo(){
+        System.out.println("Customer Id : "+id);
+        System.out.println("Customer Name : "+name);
+        rental.displayRentalinfo();
+    }
+}
  public class pra130 {
     public static void main(String[] args){
         //main........
         Rental r1 = new Rental();
         r1.displayRentalinfo();
+        Customer c1 = new Customer(171, "Masud", r1);
+        c1.displayCutomerInfo();
     }
 }
