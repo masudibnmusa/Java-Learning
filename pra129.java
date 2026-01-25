@@ -1,8 +1,10 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 abstract class Subscription{
     protected int id;
     protected String name;
-    protected String startingDate;
-    protected String endingDate;
+    protected LocalDate startingDate;
+    protected LocalDate endingDate;
     Subscription(int id,String name,String startingDate,String endingDate){
         setId(id);
         this.name = name;
@@ -15,19 +17,13 @@ abstract class Subscription{
         }
         this.id = id;
     }
-    void setStartingDate(String startingDate){
-        int date = Integer.parseInt(startingDate);
-        if(date<0){
-            throw new IllegalArgumentException("date cant be negative");
-        }
-        this.startingDate = startingDate; 
+    void setStartingDate(String startingDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        this.startingDate = LocalDate.parse(startingDate, formatter);
     }
     void setEndingDate(String endingDate){
-        int date = Integer.parseInt(endingDate);
-        if(date<0){
-            throw new IllegalArgumentException("Date cant be negative");
-        }
-        this.endingDate = endingDate;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-mm-yyyy");
+        this.endingDate = LocalDate.parse(endingDate,formatter);
     }
     abstract void displayInfo();
 }
