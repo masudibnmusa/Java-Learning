@@ -23,6 +23,12 @@ abstract class Items {
         }
         this.quantity = quantity;
     }
+    void setStatus(boolean isSelleble){
+        this.isSelleble = isSelleble;
+    }
+    boolean getStatus(){
+        return isSelleble;
+    }
 
     abstract void displayInfo();
 }
@@ -36,10 +42,11 @@ class Perishable extends Items {
     
     @Override
     void displayInfo() {
-        System.out.println("Item Id          : " + id);
-        System.out.println("Item Name        : " + name);
-        System.out.println("Item Quantity    : " + quantity);
-        System.out.println("Item Expire Date : " + expireDate);
+        System.out.println("Item Id              : " + id);
+        System.out.println("Item Name            : " + name);
+        System.out.println("Item Quantity        : " + quantity);
+        System.out.println("Item Expire Date     : " + expireDate);
+        System.out.println("Item Sellable status : " + getStatus());
     }
 }
 class ElectricalItem extends Items{
@@ -48,9 +55,10 @@ class ElectricalItem extends Items{
     }
     @Override
     void displayInfo(){
-        System.out.println("Item Id          : " + id);
-        System.out.println("Item Name        : " + name);
-        System.out.println("Item Quantity    : " + quantity);
+        System.out.println("Item Id              : " + id);
+        System.out.println("Item Name            : " + name);
+        System.out.println("Item Quantity        : " + quantity);
+        System.out.println("Item Sellable status : " + getStatus());
     }
 }
 
@@ -59,8 +67,10 @@ public class pra127 {
         // main
         Items i1 = new ElectricalItem(102, "Fan", 2);
         Items i2 = new Perishable(101, "Sugar Canal", 5, "22-12-22");
+        i2.setStatus(false);
         i1.displayInfo();
         System.out.println();
+        i2.setStatus(true);
         i2.displayInfo();
         
     }
