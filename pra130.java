@@ -1,4 +1,3 @@
-import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 abstract class Vehicle{
@@ -28,7 +27,6 @@ class Car extends Vehicle{
     private String type = "Car";
     Car(String brand,int speed,double basePrice){
         super(brand, speed, basePrice);
-        this.type = type; 
     }
     @Override
     void display(){
@@ -42,7 +40,6 @@ class Bike extends Vehicle{
     private String type = "Bike";
     Bike(String brand,int speed,double basePrice){
         super(brand, speed, basePrice);
-        this.type = type;
     }
     @Override
     void display(){
@@ -100,22 +97,28 @@ class Rental{
         //main........
         Vehicle v1 = new Bike("Hero", 170, 120000);
         Vehicle v2 = new Car("Tata", 240, 1200000);
+        
         Customer c1 = new Customer(101, "Masud", "masud@");
         Customer c2 = new Customer(102, "Rakib", "rakib@");
 
         Rental r1 = new Rental(01, "25-01-2026", v2, c2);
+        System.out.println("Rental Information");
         r1.displayRentlInfo();
         System.out.println();
+        System.out.println("Customer information");
         c2.displayCutomerInfo();
-        System.out.println();
+        System.out.println("Vehicle information");System.out.println();
         v2.display();
-        System.out.println();
-        System.out.println();
+        System.out.println("----------------");
+        System.out.println("----------------");
         Rental r2 = new Rental(02, "25-01-2026", v1, c1);
+        System.out.println("Rental Information");
         r2.displayRentlInfo();
         System.out.println();
+        System.out.println("Customer information");
         c1.displayCutomerInfo();
         System.out.println();
+        System.out.println("Vehicle information");
         v1.display();
     }
 }
