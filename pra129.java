@@ -22,7 +22,7 @@ abstract class Subscription{
         this.startingDate = LocalDate.parse(startingDate, formatter);
     }
     void setEndingDate(String endingDate){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-mm-yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         this.endingDate = LocalDate.parse(endingDate,formatter);
     }
     abstract void displayInfo();
@@ -64,8 +64,8 @@ public class pra129 {
         s1.displayInfo();
         s2.displayInfo();
         Subscription [] subscriptions ={
-            new MonthlySubcription(103, "Siam", "12-2-2004", "12-2-2004"),
-            new YearlySubscription(104, "Siam", "12-12-2003", "12-3-2005")
+            new MonthlySubcription(103, "Siam", "12-02-2004", "12-02-2004"),
+            new YearlySubscription(104, "Siam", "12-12-2003", "12-03-2005")
         };
         for (Subscription s3 : subscriptions){
             s3.displayInfo();
