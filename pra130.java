@@ -3,8 +3,8 @@ abstract class Vehicle{
     protected int speed;
     protected double basePrice;
     Vehicle(String brand,int speed,double basePrice){
+        this.brand = brand;
         setSpeed(speed);
-        this.speed = speed;
         setBasePrice(basePrice);
     }
     void setSpeed(int speed){
@@ -20,9 +20,45 @@ abstract class Vehicle{
         this.basePrice = basePrice;
     }
     abstract void display();
+}
+class Car extends Vehicle{
+    private String type = "Car";
+    Car(String brand,int speed,double basePrice){
+        super(brand, speed, basePrice);
+        this.type = type; 
+    }
+    @Override
+    void display(){
+        System.out.println("Brand name       : "+brand);
+        System.out.println("Top Speed        : "+speed);
+        System.out.println("Vehicle Type     : "+type);
+        System.out.println("Price of the Car : "+basePrice);
+    }
 } 
+class Bike extends Vehicle{
+    private String type = "Bike";
+    Bike(String brand,int speed,double basePrice){
+        super(brand, speed, basePrice);
+        this.type = type;
+    }
+    @Override
+    void display(){
+        System.out.println("Brand name       : "+brand);
+        System.out.println("Top Speed        : "+speed);
+        System.out.println("Vehicle Type     : "+type);
+        System.out.println("Price of the Car : "+basePrice);
+    }
+}
  public class pra130 {
     public static void main(String[] args){
         //main........
+        Vehicle [] vehicles ={
+            new Bike("Tata", 170, 170000),
+            new Car("TaTa", 240, 1200000)
+        };
+        for(Vehicle v1 :vehicles){
+            v1.display();
+            System.out.println();
+        }
     }
 }
