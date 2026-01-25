@@ -7,7 +7,7 @@ abstract class Subscription{
         setId(id);
         this.name = name;
         setStartingDate(startingDate);
-        this.endingDate = endingDate;
+        setEndingDate(endingDate);
     }
     void setId(int id){
         if(id<0){
@@ -22,7 +22,28 @@ abstract class Subscription{
         }
         this.startingDate = startingDate; 
     }
+    void setEndingDate(String endingDate){
+        int date = Integer.parseInt(endingDate);
+        if(date<0){
+            throw new IllegalArgumentException("Date cant be negative");
+        }
+        this.endingDate = endingDate;
+    }
     abstract void displayInfo();
+}
+class MonthlySubcription extends Subscription{
+    private String plan = "Monthly subcription";
+    MonthlySubcription(int id,String name,String startingDate,String endingDate){
+        super(id, name, startingDate, endingDate);
+    }
+    @Override
+    void displayInfo(){
+        System.out.println("Subscriber id     : "+id);
+        System.out.println("Subscriber name   : "+name);
+        System.out.println("Subscription type : "+plan);
+        System.out.println("Starting Date     : "+startingDate);
+        System.out.println("Ending Date       : "+endingDate);
+    }
 }
 public class pra129 {
     public static void main(String []args){
