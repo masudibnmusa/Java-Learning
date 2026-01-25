@@ -25,8 +25,6 @@ abstract class Items {
     }
 
     abstract void displayInfo();
-
-    abstract boolean isSelleble(boolean isSelleble);
 }
 
 class Perishable extends Items {
