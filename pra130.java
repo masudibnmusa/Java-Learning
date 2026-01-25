@@ -49,9 +49,8 @@ class Bike extends Vehicle{
         System.out.println("Price of the Car : "+basePrice);
     }
 }
- public class pra130 {
-    public static void main(String[] args){
-        //main........
+class Rental{
+    void displayRentalinfo(){
         Vehicle [] vehicles ={
             new Bike("Tata", 170, 170000),
             new Car("TaTa", 240, 1200000)
@@ -60,5 +59,12 @@ class Bike extends Vehicle{
             v1.display();
             System.out.println();
         }
+    }
+}
+ public class pra130 {
+    public static void main(String[] args){
+        //main........
+        Rental r1 = new Rental();
+        r1.displayRentalinfo();
     }
 }
