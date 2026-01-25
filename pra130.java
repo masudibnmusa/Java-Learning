@@ -1,3 +1,4 @@
+import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 abstract class Vehicle{
@@ -70,10 +71,12 @@ class Rental{
     int id;
     LocalDate rentalDate;
     Vehicle vehicle;
-    Rental(int id,String rentalDate,Vehicle vehicle){
+    Customer customer;
+    Rental(int id,String rentalDate,Vehicle vehicle,Customer customer){
         setId(id);
-        this.rentalDate = rentalDate;
+        setRentaldate(rentalDate);
         this.vehicle = vehicle;
+        this.customer = customer;
     }
     void setId(int id){
         if(id<=0){
@@ -81,13 +84,38 @@ class Rental{
         }
         this.id = id;
     }
+    void setRentaldate(String rentalDate){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        this.rentalDate = LocalDate.parse(rentalDate,formatter);
+    }
+    void displayRentlInfo(){
+        System.out.println("Rental id    : "+id);
+        System.out.println("Rental Date  : "+rentalDate);
+        System.out.println("Cusomer name : "+customer.name);
+        System.out.println("Vehicle name : "+vehicle.brand);
+    }
 }
  public class pra130 {
     public static void main(String[] args){
         //main........
-        Rental r1 = new Rental();
-        r1.displayRentalinfo();
-        Customer c1 = new Customer(171, "Masud", r1);
+        Vehicle v1 = new Bike("Hero", 170, 120000);
+        Vehicle v2 = new Car("Tata", 240, 1200000);
+        Customer c1 = new Customer(101, "Masud", "masud@");
+        Customer c2 = new Customer(102, "Rakib", "rakib@");
+
+        Rental r1 = new Rental(01, "25-01-2026", v2, c2);
+        r1.displayRentlInfo();
+        System.out.println();
+        c2.displayCutomerInfo();
+        System.out.println();
+        v2.display();
+        System.out.println();
+        System.out.println();
+        Rental r2 = new Rental(02, "25-01-2026", v1, c1);
+        r2.displayRentlInfo();
+        System.out.println();
         c1.displayCutomerInfo();
+        System.out.println();
+        v1.display();
     }
 }
