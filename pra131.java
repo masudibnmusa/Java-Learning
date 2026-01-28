@@ -48,17 +48,29 @@ class InternationalFlight extends Flight{
 class Passenger{
     private String passengerName;
     private String email;
-    private String destinaton;
-    Passenger(String passengerName,String email,String destination){
+    private String address;
+    Passenger(String passengerName,String email,String address){
         this.passengerName = passengerName;
         this.email = email;
-        this.destinaton = destination;
+        this.address = address;
+    }
+    String getName(){
+        return passengerName;
+    }
+    String getEmail(){
+        return email;
+    }
+    String getAdress(){
+        return address;
     }
     void displayPassengerinfo(){
-        System.out.println("Passenger name : "+passengerName);
-        System.out.println("Email          : "+email);
-        System.out.println("Destination    : "+destinaton);
+        System.out.println("Passenger name : "+getName());
+        System.out.println("Email          : "+getEmail());
+        System.out.println("Destination    : "+getAdress());
     }
+}
+class CheckInCounter{
+
 }
 public class pra131 {
     public static void main(String[] args){
