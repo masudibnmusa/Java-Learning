@@ -56,12 +56,18 @@ class Passenger{
     }
     void displayPassengerinfo(){
         System.out.println("Passenger name : "+passengerName);
-        System.out.println("Email : "+email);
-        System.out.println("Destination : "+destinaton);
+        System.out.println("Email          : "+email);
+        System.out.println("Destination    : "+destinaton);
     }
 }
 public class pra131 {
     public static void main(String[] args){
         //main..
+        Flight f1 = new DomesticFlight(696, "22-02-2026", "23-02-2026");
+        Flight f2 = new InternationalFlight(456,"23-02-2026","24-02-2026");
+        f1.displayFlightinfo();
+        f2.displayFlightinfo();
+        Passenger p1 = new Passenger("Masud","masudibnmusa10@gmail.com","Dhaka");
+        p1.displayPassengerinfo();
     }
 }
