@@ -37,8 +37,28 @@ class DomesticFlight extends Flight{
         super.displayFlightinfo();
     }
 }
-class Passenger {
-
+class InternationalFlight extends Flight{
+    InternationalFlight(int flightNo,String departure,String arrival){
+        super(flightNo, departure, arrival);
+    }
+    void displayFlightinfo(){
+        super.displayFlightinfo();
+    }
+}
+class Passenger{
+    private String passengerName;
+    private String email;
+    private String destinaton;
+    Passenger(String passengerName,String email,String destination){
+        this.passengerName = passengerName;
+        this.email = email;
+        this.destinaton = destination;
+    }
+    void displayPassengerinfo(){
+        System.out.println("Passenger name : "+passengerName);
+        System.out.println("Email : "+email);
+        System.out.println("Destination : "+destinaton);
+    }
 }
 public class pra131 {
     public static void main(String[] args){
