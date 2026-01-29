@@ -3,10 +3,10 @@ import java.time.format.DateTimeFormatter;
 abstract class Flight{
     protected int flightNo;
     protected LocalDate departure;
-    protected int departureTime;
+    protected double departureTime;
     protected LocalDate arrival;
-    protected int arrivalTime;
-    Flight(int flightNo,String departure,int departureTime,String arrival,int arrivalTime){
+    protected double arrivalTime;
+    Flight(int flightNo,String departure,double departureTime,String arrival,double arrivalTime){
         setFlightNo(flightNo);
         setDepature(departure);
         setDepatureTime(departureTime);
@@ -23,8 +23,8 @@ abstract class Flight{
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         this.departure = LocalDate.parse(departure,formatter);
     }
-    void setDepatureTime(int departureTime){
-        if(departureTime<0){
+    void setDepatureTime(double departureTime){
+        if(departureTime<00 || departureTime >23.99){
             throw new IllegalArgumentException("Time cant be negative");
         }
         this.departureTime = departureTime;
@@ -33,8 +33,8 @@ abstract class Flight{
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         this.arrival = LocalDate.parse(arrival,formatter);
     }
-    void setArrivalTime(int arrivalTime){
-        if(arrivalTime<0){
+    void setArrivalTime(double arrivalTime){
+        if(arrivalTime<0 || arrivalTime >23.99){
             throw new IllegalArgumentException("Time cant be negative");
         }
         this.arrivalTime = arrivalTime;
@@ -48,16 +48,16 @@ abstract class Flight{
     }
 }
 class DomesticFlight extends Flight{
-    DomesticFlight(int flightNo,String departure,int departureTime,String arrival,int arrivalTime){
-        super(flightNo, departure, flightNo, arrival, flightNo);
+    DomesticFlight(int flightNo,String departure,double departureTime,String arrival,double arrivalTime){
+        super(flightNo, departure, departureTime, arrival, arrivalTime);
     }
     void displayFlightinfo(){
         super.displayFlightinfo();
     }
 }
 class InternationalFlight extends Flight{
-    InternationalFlight(int flightNo,String departure,int departureTime,String arrival,int arrivalTime){
-        super(flightNo, departure, flightNo, arrival, flightNo);
+    InternationalFlight(int flightNo,String departure,double departureTime,String arrival,double arrivalTime){
+        super(flightNo, departure, departureTime, arrival, arrivalTime);
     }
     void displayFlightinfo(){
         super.displayFlightinfo();
@@ -84,17 +84,17 @@ class Passenger{
     void displayPassengerinfo(){
         System.out.println("Passenger name : "+getName());
         System.out.println("Email          : "+getEmail());
-        System.out.println("Address    : "+getAdress());
+        System.out.println("Address        : "+getAdress());
     }
 }
 class CheckInCounter{
-    
+    //work later...
 }
 public class pra131 {
     public static void main(String[] args){
         //main..
-        Flight f1 = new DomesticFlight(686, "22-02-2026", 1200, "22-02-2026", 0600);
-        Flight f2 = new InternationalFlight(686, "23-02-2026", 1200, "23-02-2026", 0600);
+        Flight f1 = new DomesticFlight(686, "22-02-2026", 12.00, "22-02-2026", 6.15);
+        Flight f2 = new InternationalFlight(686, "23-02-2026", 12.00, "23-02-2026", 6.15);
         f1.displayFlightinfo();
         System.out.println();
         f2.displayFlightinfo();
