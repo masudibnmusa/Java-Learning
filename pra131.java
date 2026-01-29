@@ -120,6 +120,15 @@ public class pra131 {
         System.out.println();
         f2.displayFlightinfo();
         Passenger p1 = new Passenger("Masud","masudibnmusa10@gmail.com","Dhaka");
+        Passenger p2 = new Passenger("Rakib","rakib10@gmail.com","Kishoreganj");
         p1.displayPassengerinfo();
+        System.out.println();
+        p2.displayPassengerinfo();
+
+        CheckInCounter c1 = new CheckInCounter(12, "Terminal 1", p1, f2);
+        CheckInCounter c2 = new CheckInCounter(12, "Terminal 1", p2, f2);
+        c1.displayCounter();
+        System.out.println();
+        c2.displayCounter();
     }
 }
