@@ -88,7 +88,28 @@ class Passenger{
     }
 }
 class CheckInCounter{
-    //work later...
+    int counterId;
+    String terminal;
+    Passenger passenger;
+    Flight flight;
+    CheckInCounter(int counterId,String terminal,Passenger passenger,Flight flight){
+        setCounterId(counterId);
+        this.terminal = terminal;
+        this.passenger = passenger;
+        this.flight = flight;
+    }
+    void setCounterId(int counterId){
+        if(counterId<=0){
+            throw new IllegalArgumentException("Counter Id cant be negative");
+        }
+        this.counterId = counterId;
+    }
+    void displayCounter(){
+        System.out.println("Counter id : "+counterId);
+        System.out.println("Terminal : "+terminal);
+        System.out.println("Passenger name : "+passenger.getName());
+        System.out.println("Flight : "+flight.flightNo);
+    }
 }
 public class pra131 {
     public static void main(String[] args){
