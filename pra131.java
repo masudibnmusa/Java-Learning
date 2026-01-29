@@ -111,6 +111,24 @@ class CheckInCounter{
         System.out.println("Flight         : "+flight.flightNo);
     }
 }
+class Ticket{
+    int ticketNo;
+    Passenger passenger;
+    Flight flight ;
+    String clas;
+    Ticket(int ticketNo,Passenger passenger,Flight flight,String clas){
+        this.ticketNo = ticketNo;
+        this.passenger = passenger;
+        this.flight = flight;
+        this.clas = clas ;
+    }
+    void showTicket(){
+        System.out.println("Ticket No      : "+ticketNo);
+        System.out.println("Passenger name : "+passenger.getName());
+        System.out.println("Flight No      : "+flight);
+        System.out.println("Class          : "+clas);
+    }
+}
 public class pra131 {
     public static void main(String[] args){
         //main..
@@ -131,5 +149,9 @@ public class pra131 {
         c1.displayCounter();
         System.out.println();
         c2.displayCounter();
+        System.out.println();
+
+        Ticket t1 = new Ticket(1, p2, f2, "Bussiness Class");
+        t1.showTicket();
     } 
 }
