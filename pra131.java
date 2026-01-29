@@ -105,10 +105,10 @@ class CheckInCounter{
         this.counterId = counterId;
     }
     void displayCounter(){
-        System.out.println("Counter id : "+counterId);
-        System.out.println("Terminal : "+terminal);
+        System.out.println("Counter id     : "+counterId);
+        System.out.println("Terminal       : "+terminal);
         System.out.println("Passenger name : "+passenger.getName());
-        System.out.println("Flight : "+flight.flightNo);
+        System.out.println("Flight         : "+flight.flightNo);
     }
 }
 public class pra131 {
@@ -119,6 +119,7 @@ public class pra131 {
         f1.displayFlightinfo();
         System.out.println();
         f2.displayFlightinfo();
+
         Passenger p1 = new Passenger("Masud","masudibnmusa10@gmail.com","Dhaka");
         Passenger p2 = new Passenger("Rakib","rakib10@gmail.com","Kishoreganj");
         p1.displayPassengerinfo();
@@ -130,5 +131,5 @@ public class pra131 {
         c1.displayCounter();
         System.out.println();
         c2.displayCounter();
-    }
+    } 
 }
