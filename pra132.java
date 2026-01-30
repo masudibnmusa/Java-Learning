@@ -43,6 +43,14 @@ class Member extends User{
         System.out.println("User Type  : "+userType);
     }
 }
+abstract class Workout{
+}
+class CardioWorkout extends Workout{
+
+}
+class StrengthWorkout extends Workout{
+    
+}
 public class pra132 {
     public static void main(String [] args){
         //main
