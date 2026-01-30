@@ -101,5 +101,17 @@ class StrengthWorkout extends Workout{
 public class pra132 {
     public static void main(String [] args){
         //main
+        User u1 = new Trainer(101, "Masud", "01713504283");
+        User u2 = new Member(102, "Mahin", "01631717488");
+        Workout w1 = new CardioWorkout("Push Up", 25, 120, "Intermediate");
+        Workout w2 = new StrengthWorkout("Wide arm push up", 25, 150, "Hard");
+        
+        u1.displayInfo();
+        System.out.println();
+        u2.displayInfo();
+        System.out.println();
+        w1.displayWorkout();
+        System.out.println();
+        w2.displayWorkout();
     }
 }
