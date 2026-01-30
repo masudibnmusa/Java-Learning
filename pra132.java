@@ -69,10 +69,34 @@ abstract class Workout{
     abstract void displayWorkout();
 }
 class CardioWorkout extends Workout{
-
+    private String workoutType = "Cardio Workout";
+    CardioWorkout(String name,int duration,int caloriesBurned,String level){
+        super(name, duration, caloriesBurned, level);
+        this.workoutType = workoutType;
+    }
+    @Override
+    void displayWorkout(){
+        System.out.println("Workout Type     : "+workoutType);
+        System.out.println("Workout name     : "+name);
+        System.out.println("Workout Duration : "+duration);
+        System.out.println("Calories Burned  : "+caloriesBurned);
+        System.out.println("Workout Level    : "+level);
+    }
 }
 class StrengthWorkout extends Workout{
-
+    private String workoutType = "Strength Workout";
+    StrengthWorkout(String name,int duration,int caloriesBurned,String level){
+        super(name, duration, caloriesBurned, level);
+        this.workoutType = workoutType;
+    }
+    @Override
+    void displayWorkout(){
+        System.out.println("Workout Type     : "+workoutType);
+        System.out.println("Workout name     : "+name);
+        System.out.println("Workout Duration : "+duration);
+        System.out.println("Calories Burned  : "+caloriesBurned);
+        System.out.println("Workout Level    : "+level);
+    }
 }
 public class pra132 {
     public static void main(String [] args){
