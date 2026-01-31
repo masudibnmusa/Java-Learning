@@ -30,7 +30,14 @@ class Fruit extends Product{
     }
 }
 class Vegetable extends Product{
-
+    Vegetable(int quantity,double price){
+        super(quantity, price);
+    }
+    @Override
+    void displayInfo(){
+        System.out.println("Quantity of the vegetable is : "+quantity);
+        System.out.println("The price of the vegetable is : "+price);
+    }
 }
 class Dairy extends Product{
 
