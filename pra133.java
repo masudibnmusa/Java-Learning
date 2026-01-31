@@ -3,7 +3,7 @@ abstract class Product{
     protected double price;
     Product(int quantity,double price){
         setQuantity(quantity);
-        setPrice(quantity);
+        setPrice(price);
     }
     void setQuantity(int quantity){
         if(quantity <0){
@@ -11,7 +11,7 @@ abstract class Product{
         }
         this.quantity = quantity;
     }
-    void setPrice(int price){
+    void setPrice(double price){
         if(price <0){
             throw new IllegalArgumentException("Price cant be negative");
         }
@@ -49,11 +49,12 @@ class Dairy extends Product{
         System.out.println("The price of the dairy is : "+price);
     }
 }
-private class Cart{
-    Vegetable vegetable;
+class Cart{
+    
     Fruit fruit;
+    Vegetable vegetable;
     Dairy dairy;
-    Cart(Vegetable vegetable,Fruit fruit, Dairy dairy){
+    Cart(Fruit fruit,Vegetable vegetable, Dairy dairy){
         this.fruit = fruit;
         this.vegetable = vegetable;
         this.dairy = dairy;
@@ -65,6 +66,11 @@ private class Cart{
 public class pra133 {
     public static void main(String[] args){
         //main
-        git 
+        Product p1 = new Dairy(1, 100);
+        Product p2 = new Fruit(1, 100);
+        Product p3 = new Vegetable(1, 100);
+
+        Cart c1 = new Cart(p2, p3, p1);
+        c1.totalPrice();
     }
 }
