@@ -50,10 +50,21 @@ class Dairy extends Product{
     }
 }
 private class Cart{
-    
+    Vegetable vegetable;
+    Fruit fruit;
+    Dairy dairy;
+    Cart(Vegetable vegetable,Fruit fruit, Dairy dairy){
+        this.fruit = fruit;
+        this.vegetable = vegetable;
+        this.dairy = dairy;
+    }
+    void totalPrice(){
+        System.out.println("Toatal Payable ammount is : "+(fruit.price+vegetable.price+dairy.price));
+    }
 }
 public class pra133 {
     public static void main(String[] args){
         //main
+        git 
     }
 }
