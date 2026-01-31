@@ -19,6 +19,25 @@ abstract class Product{
     }
     abstract void displayInfo();
 }
+class Fruit extends Product{
+    Fruit(int quantity,double price){
+        super(quantity, price);
+    }
+    @Override
+    void displayInfo(){
+        System.out.println("Quantity of the fruit is  : "+quantity);
+        System.out.println("The price of the fruit is : "+price);
+    }
+}
+class Vegetable extends Product{
+
+}
+class Dairy extends Product{
+
+}
+private class Cart{
+
+}
 public class pra133 {
     public static void main(String[] args){
         //main
