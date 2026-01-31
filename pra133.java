@@ -66,9 +66,9 @@ class Cart{
 public class pra133 {
     public static void main(String[] args){
         //main
-        Product p1 = new Dairy(1, 100);
-        Product p2 = new Fruit(1, 100);
-        Product p3 = new Vegetable(1, 100);
+        Dairy p1 = new Dairy(1, 100);
+        Fruit p2 = new Fruit(1, 100);
+        Vegetable p3 = new Vegetable(1, 100);
 
         Cart c1 = new Cart(p2, p3, p1);
         c1.totalPrice();
