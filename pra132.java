@@ -19,7 +19,6 @@ class Trainer extends User{
     private String userType = "Trainer";
     Trainer(int userId,String name,String phone){
         super(userId, name, phone);
-        this.userType = userType;
     }
     @Override
     void displayInfo(){
@@ -33,7 +32,6 @@ class Member extends User{
     private String userType = "Member";
     Member(int userId,String name,String phone){
         super(userId, name, phone);
-        this.userType = userType;
     }
     @Override
     void displayInfo(){
@@ -72,7 +70,6 @@ class CardioWorkout extends Workout{
     private String workoutType = "Cardio Workout";
     CardioWorkout(String name,int duration,int caloriesBurned,String level){
         super(name, duration, caloriesBurned, level);
-        this.workoutType = workoutType;
     }
     @Override
     void displayWorkout(){
@@ -87,7 +84,6 @@ class StrengthWorkout extends Workout{
     private String workoutType = "Strength Workout";
     StrengthWorkout(String name,int duration,int caloriesBurned,String level){
         super(name, duration, caloriesBurned, level);
-        this.workoutType = workoutType;
     }
     @Override
     void displayWorkout(){
