@@ -26,5 +26,7 @@ class Concert extends Event{
 public class pra134 {
     public static void main(String[] args){
         //main............
+        Concert c1 = new Concert("Mahin", "22-02-2022");
+        c1.displayInfo();
     }
 }
