@@ -76,6 +76,13 @@ public class pra133 {
         Fruit p2 = new Fruit(1, 100);
         Vegetable p3 = new Vegetable(3, 100);
 
+        p1.displayInfo();
+        System.out.println();
+        p2.displayInfo();
+        System.out.println();
+        p3.displayInfo();
+        System.out.println();
+
         Cart c1 = new Cart(p2, p3, p1);
         c1.totalPrice();
     }
