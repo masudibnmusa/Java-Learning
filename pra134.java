@@ -45,10 +45,36 @@ class Conference extends Event{
         System.out.println("The Date of the conference is : "+date);
     }
 }
+class Booking{
+    int bookingId;
+    String name;
+    String email;
+    Event event;
+    Booking(int bookingId,String name,String email,Event event){
+        setId(bookingId);
+        this.name = name;
+        this.email = email;
+        this.event = event;
+    }
+    void setId(int bookingId){
+        if(bookingId<=0){
+            throw new IllegalArgumentException("Id cant be negative");
+        }
+        this.bookingId = bookingId;
+    }
+    void displayBookings(){
+        System.out.println("Booking Id    : "+bookingId);
+        System.out.println("Booker's name : "+name);
+        System.out.println("Booker's Email : "+email);
+        System.out.println("Event : "+event.name);
+    }
+}
 public class pra134 {
     public static void main(String[] args){
         //main............
         Concert c1 = new Concert("Mahin", "22-02-2022");
         c1.displayInfo();
+        Booking b1 = new Booking(101, "MAsud", "masudibnmusa@gmail.com", c1);
+        b1.displayBookings();
     }
 }
