@@ -57,5 +57,14 @@ class Truck extends Vehicle{
 public class pra135 {
     public static void main(String[] args){
         //main
+        Vehicle v1 = new Bike(101, "Masud", null);
+        Vehicle v2 = new Truck(102, "Rakib", null);
+        Vehicle v3 = new Car(103, "mahim", null);
+
+        v1.displayVehicle();
+        System.out.println();
+        v2.displayVehicle();
+        System.out.println();
+        v3.displayVehicle();
     }
 }
