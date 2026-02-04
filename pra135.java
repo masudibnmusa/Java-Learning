@@ -61,7 +61,7 @@ class ParkingLot{
     String watchManPhone;
     ParkingLot(String name,int capacity,String watchMan,String watchManPhone){
         this.name = name;
-        this.capacity = capacity;
+        setCapacity(capacity);
         this.watchMan = watchMan;
         this.watchManPhone = watchManPhone;
     }
@@ -78,8 +78,21 @@ class ParkingLot{
         System.out.println("Paking Lot Watch Man Phone : "+watchManPhone);
     }
 }
-class PakingSlot{
-
+class ParkingSlot{
+    int slotNo;
+    Vehicle vehicle;
+    ParkingLot parkingLot;
+    ParkingSlot(int slotNo,Vehicle vehicle, ParkingLot parkingLot){
+        setSlotno(slotNo);
+        this.vehicle = vehicle;
+        this.parkingLot = parkingLot;
+    }
+    void setSlotno(int slotNo){
+        if(slotNo<=0){
+            throw new IllegalArgumentException("cant be  negative")
+        }git 
+        this.slotNo = slotNo;
+    }
 } 
 public class pra135 {
     public static void main(String[] args){
