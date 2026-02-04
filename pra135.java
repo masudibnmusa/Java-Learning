@@ -42,7 +42,7 @@ class Bike extends Vehicle{
     }
 }
 class Truck extends Vehicle{
-    private String type = "Truck";
+    String type = "Truck";
     Truck(int no,String name,String phone){
         super(no, name, phone);
     }
@@ -89,22 +89,39 @@ class ParkingSlot{
     }
     void setSlotno(int slotNo){
         if(slotNo<=0){
-            throw new IllegalArgumentException("cant be  negative")
-        }git 
+            throw new IllegalArgumentException("cant be  negative");
+        }
         this.slotNo = slotNo;
+    }
+    void displaySlot(){
+        System.out.println("Slot Number : "+slotNo);
+        System.out.println("Owner's Name : "+vehicle.name);
+        System.out.println("Parking Lot  Name : "+parkingLot.name);
     }
 } 
 public class pra135 {
     public static void main(String[] args){
-        //main
+        //classes
         Vehicle v1 = new Bike(101, "Masud", null);
         Vehicle v2 = new Truck(102, "Rakib", null);
         Vehicle v3 = new Car(103, "mahim", null);
 
+        ParkingLot p1 = new ParkingLot("West Zone", 1200, "Mahin", null);
+        ParkingSlot slot1 = new ParkingSlot(1, v1, p1);
+        
+        //Operations
         v1.displayVehicle();
         System.out.println();
         v2.displayVehicle();
         System.out.println();
         v3.displayVehicle();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        p1.dispalyParkingLot();
+        System.out.println();
+
+        slot1.displaySlot();
     }
 }
