@@ -20,6 +20,7 @@ class Car extends Vehicle{
     Car(int no,String name,String phone){
         super(no, name, phone);
     }
+    @Override
     void displayVehicle(){
         System.out.println("Vehicle Number is : "+no);
         System.out.println("Ower Name  is : "+name);
@@ -27,7 +28,19 @@ class Car extends Vehicle{
         System.out.println("Vehicle Type is : "+type );
     }
 }
-class Bike extends Vehicle{}
+class Bike extends Vehicle{
+    private String type = "Bike";
+    Bike(int no,String name,String phone){
+        super(no, name, phone);
+    }
+    @Override
+    void displayVehicle(){
+        System.out.println("Vehicle Number is : "+no);
+        System.out.println("Ower Name  is : "+name);
+        System.out.println("Ower's Phone number is : "+phone);
+        System.out.println("Vehicle Type is : "+type );
+    }
+}
 class Truck extends Vehicle{}  
 public class pra135 {
     public static void main(String[] args){
