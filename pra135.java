@@ -53,7 +53,34 @@ class Truck extends Vehicle{
         System.out.println("Ower's Phone number is : "+phone);
         System.out.println("Vehicle Type is : "+type );
     }
-}  
+} 
+class ParkingLot{
+    String name;
+    int capacity;
+    String watchMan;
+    String watchManPhone;
+    ParkingLot(String name,int capacity,String watchMan,String watchManPhone){
+        this.name = name;
+        this.capacity = capacity;
+        this.watchMan = watchMan;
+        this.watchManPhone = watchManPhone;
+    }
+    void setCapacity(int capacity){
+        if(capacity<=0){
+            throw new IllegalArgumentException("Capacity cant be negative");
+        }
+        this.capacity = capacity;
+    }
+    void dispalyParkingLot(){
+        System.out.println("Paking Lot Name : "+name);
+        System.out.println("Paking Lot Capacity : "+capacity);
+        System.out.println("Paking Lot Watch Man name : "+watchMan);
+        System.out.println("Paking Lot Watch Man Phone : "+watchManPhone);
+    }
+}
+class PakingSlot{
+
+} 
 public class pra135 {
     public static void main(String[] args){
         //main
