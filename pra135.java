@@ -15,6 +15,20 @@ abstract class Vehicle{
     }
     abstract void displayVehicle();
 }
+class Car extends Vehicle{
+    private String type = "Car";
+    Car(int no,String name,String phone){
+        super(no, name, phone);
+    }
+    void displayVehicle(){
+        System.out.println("Vehicle Number is : "+no);
+        System.out.println("Ower Name  is : "+name);
+        System.out.println("Ower's Phone number is : "+phone);
+        System.out.println("Vehicle Type is : "+type );
+    }
+}
+class Bike extends Vehicle{}
+class Truck extends Vehicle{}  
 public class pra135 {
     public static void main(String[] args){
         //main
