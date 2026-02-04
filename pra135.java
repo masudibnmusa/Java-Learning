@@ -41,7 +41,19 @@ class Bike extends Vehicle{
         System.out.println("Vehicle Type is : "+type );
     }
 }
-class Truck extends Vehicle{}  
+class Truck extends Vehicle{
+    private String type = "Truck";
+    Truck(int no,String name,String phone){
+        super(no, name, phone);
+    }
+    @Override
+    void displayVehicle(){
+        System.out.println("Vehicle Number is : "+no);
+        System.out.println("Ower Name  is : "+name);
+        System.out.println("Ower's Phone number is : "+phone);
+        System.out.println("Vehicle Type is : "+type );
+    }
+}  
 public class pra135 {
     public static void main(String[] args){
         //main
