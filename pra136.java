@@ -20,7 +20,14 @@ abstract class LibraryUser{
     }
 }
 class Student extends LibraryUser{
-
+    Student(int userId,String userName,String email){
+        super(userId, userName, email);
+    }
+    @Override
+    void displayUserInfo(){
+        super.displayUserInfo();
+        System.out.println("User Type : Student");
+    }
 }
 class Teacher extends LibraryUser{
 
