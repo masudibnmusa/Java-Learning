@@ -91,7 +91,17 @@ class Novel extends Book{
     }
 }
 class ReferenceBook extends Book{
-
+    ReferenceBook(int bookId,String bookTitle,String author,int stock){
+        super(bookId, bookTitle, author, stock);
+    }
+    @Override
+    void displayBook(){
+        System.out.println("Book's Id : "+bookId);
+        System.out.println("Book's Title : "+bookTitle);
+        System.out.println("Book's Author : "+author);
+        System.out.println("Book Type : Reference Book");
+        System.out.println("Stock : "+stock);
+    }
 }
 public class pra136 {
     public static void main(String[] args) {
