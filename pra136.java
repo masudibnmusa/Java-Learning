@@ -39,14 +39,56 @@ class Teacher extends LibraryUser{
         System.out.println("User Type : Faculty");
     }
 }
-class Book{
-
+abstract class Book{
+    protected int bookId;
+    protected String bookTitle;
+    protected String author;
+    protected int stock;
+    Book(int bookId,String bookTitle,String author,int stock){
+        setBookid(bookId);
+        this.bookTitle = bookTitle;
+        this.author = author;
+        setStock(stock);
+    }
+    private void setBookid(int bookId){
+        if(bookId<=0){
+            throw new IllegalArgumentException("Book Id cant be negative");
+        }
+        this.bookId = bookId;
+    }
+    private void setStock(int stock){
+        if(stock<0){
+            throw new IllegalArgumentException("Stock cant be negative");
+        }
+        this.stock = stock;
+    }
+    abstract void displayBook();
 }
 class TextBook extends Book{
-
+    TextBook(int bookId,String bookTitle,String author){
+        super(bookId, bookTitle, author, bookId);
+    }
+    @Override
+    void displayBook(){
+        System.out.println("Book's Id : "+bookId);
+        System.out.println("Book's Title : "+bookTitle);
+        System.out.println("Book's Author : "+author);
+        System.out.println("Book Type : Text Book");
+        System.out.println("Stock : "+stock);
+    }
 }
 class Novel extends Book{
-
+    Novel(int bookId,String bookTitle,String author,int stock){
+        super(bookId, bookTitle, author, stock);
+    }
+    @Override
+    void displayBook(){
+        System.out.println("Book's Id : "+bookId);
+        System.out.println("Book's Title : "+bookTitle);
+        System.out.println("Book's Author : "+author);
+        System.out.println("Book Type : Novel");
+        System.out.println("Stock : "+stock);
+    }
 }
 class ReferenceBook extends Book{
 
