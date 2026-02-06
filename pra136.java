@@ -103,6 +103,18 @@ class ReferenceBook extends Book{
         System.out.println("Stock : "+stock);
     }
 }
+class BorrowBook{
+    LibraryUser libraryUser;
+    Book book;
+    BorrowBook(LibraryUser libraryUser,Book book){
+        this.libraryUser = libraryUser;
+        this.book = book;
+    }
+    private void displayBorrowing(){
+        System.out.println("User name : "+libraryUser.userName);
+        System.out.println("Book Id : "+book.bookId);
+    }
+}
 public class pra136 {
     public static void main(String[] args) {
         //main
