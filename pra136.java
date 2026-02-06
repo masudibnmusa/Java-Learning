@@ -106,11 +106,20 @@ class ReferenceBook extends Book{
 public class pra136 {
     public static void main(String[] args) {
         //main
-        LibraryUser u1 = new Student(0, null, null); 
-        LibraryUser u2 = new Teacher(0, null, null);
+        LibraryUser u1 = new Student(101, null, null); 
+        LibraryUser u2 = new Teacher(102, null, null);
         
-        Book b1 = new Novel(0, null, null, 0);
-        Book b2 = new TextBook(0, null, null, 0);
-        Book b3 = new ReferenceBook(0, null, null, 0);
+        Book b1 = new Novel(201, null, null, 0);
+        Book b2 = new TextBook(202, null, null);
+        Book b3 = new ReferenceBook(203, null, null, 0);
+
+        u1.displayUserInfo();
+        System.out.println();
+        u2.displayUserInfo();
+        System.out.println();
+        System.out.println();
+        b1.displayBook();
+        b2.displayBook();
+        b3.displayBook();
     }
 }
