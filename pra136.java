@@ -65,8 +65,8 @@ abstract class Book{
     abstract void displayBook();
 }
 class TextBook extends Book{
-    TextBook(int bookId,String bookTitle,String author){
-        super(bookId, bookTitle, author, bookId);
+    TextBook(int bookId,String bookTitle,String author,int stock){
+        super(bookId, bookTitle, author, stock);
     }
     @Override
     void displayBook(){
@@ -118,12 +118,12 @@ class BorrowBook{
 public class pra136 {
     public static void main(String[] args) {
         //main
-        LibraryUser u1 = new Student(101, null, null); 
-        LibraryUser u2 = new Teacher(102, null, null);
+        LibraryUser u1 = new Student(101, "Masud", "masudibnmusa10"); 
+        LibraryUser u2 = new Teacher(102, "Rakib", "rakibhasanimran");
         
-        Book b1 = new Novel(201, null, null, 0);
-        Book b2 = new TextBook(202, null, null);
-        Book b3 = new ReferenceBook(203, null, null, 0);
+        Book b1 = new Novel(201, "Be man ", "Masud", 10);
+        Book b2 = new TextBook(202, "Be wise", "Masud", 10);
+        Book b3 = new ReferenceBook(203, "Be active", "Masud", 10);
 
         BorrowBook bb1 = new BorrowBook(u1, b1);
         BorrowBook bb2 = new BorrowBook(u2, b2);
