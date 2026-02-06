@@ -110,7 +110,7 @@ class BorrowBook{
         this.libraryUser = libraryUser;
         this.book = book;
     }
-    private void displayBorrowing(){
+    void displayBorrowing(){
         System.out.println("User name : "+libraryUser.userName);
         System.out.println("Book Id : "+book.bookId);
     }
@@ -125,13 +125,22 @@ public class pra136 {
         Book b2 = new TextBook(202, null, null);
         Book b3 = new ReferenceBook(203, null, null, 0);
 
+        BorrowBook bb1 = new BorrowBook(u1, b1);
+        BorrowBook bb2 = new BorrowBook(u2, b2);
+
         u1.displayUserInfo();
         System.out.println();
         u2.displayUserInfo();
         System.out.println();
         System.out.println();
         b1.displayBook();
+        System.out.println();
         b2.displayBook();
+        System.out.println();
         b3.displayBook();
+        System.out.println();
+        bb1.displayBorrowing();
+        System.out.println();
+        bb2.displayBorrowing();
     }
 }
