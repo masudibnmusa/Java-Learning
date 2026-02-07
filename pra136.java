@@ -120,6 +120,7 @@ public class pra136 {
         //main
         LibraryUser u1 = new Student(101, "Masud", "masudibnmusa10"); 
         LibraryUser u2 = new Teacher(102, "Rakib", "rakibhasanimran");
+        LibraryUser u3 = new Teacher(102, "Rakib", "rakibhasanimran");
         
         Book b1 = new Novel(201, "Be man ", "Masud", 10);
         Book b2 = new TextBook(202, "Be wise", "Masud", 10);
@@ -127,6 +128,7 @@ public class pra136 {
 
         BorrowBook bb1 = new BorrowBook(u1, b1);
         BorrowBook bb2 = new BorrowBook(u2, b2);
+        BorrowBook bb3 = new BorrowBook(u3, b3);
 
         u1.displayUserInfo();
         System.out.println();
@@ -142,5 +144,7 @@ public class pra136 {
         bb1.displayBorrowing();
         System.out.println();
         bb2.displayBorrowing();
+        System.out.println();
+        bb3.displayBorrowing();
     }
 }
