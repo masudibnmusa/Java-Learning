@@ -43,7 +43,39 @@ class PremiumTaxi extends Taxi{
         System.out.println("Premium Taxi phone : "+phone);
     }
 }
-
+class Ride{
+    int rideNum;
+    int distance;
+    int fare;
+    Taxi taxi;
+    Ride(int rideNum,int distance,int fare,Taxi taxi){
+        setRideNum(rideNum);
+        setDistance(distance);
+        setFare(fare);
+        setTaxi(taxi);
+    }
+    private void setRideNum(int rideNum) {
+        if(rideNum<=0){
+            throw new IllegalArgumentException("ride num cant be negative");
+        }
+        this.rideNum = rideNum;
+    }
+    private void setDistance(int distance) {
+        if(distance<=0){
+            throw new IllegalArgumentException("distance cant be negative");
+        }
+        this.distance = distance;
+    }
+    private void setFare(int fare) {
+        if(fare<=0){
+            throw new IllegalArgumentException("fare cant be negative");
+        }
+        this.fare = fare;
+    }
+    public void setTaxi(Taxi taxi) {
+        this.taxi = taxi;
+    }
+}
 public class pra137 {
     public static void main(String[] args){
         //maingti 
