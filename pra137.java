@@ -44,10 +44,10 @@ class PremiumTaxi extends Taxi{
     }
 }
 class Ride{
-    int rideNum;
-    int distance;
-    int fare;
-    Taxi taxi;
+    private int rideNum;
+    private int distance;
+    private int fare;
+    private Taxi taxi;
     Ride(int rideNum,int distance,int fare,Taxi taxi){
         setRideNum(rideNum);
         setDistance(distance);
@@ -72,8 +72,26 @@ class Ride{
         }
         this.fare = fare;
     }
-    public void setTaxi(Taxi taxi) {
+    private void setTaxi(Taxi taxi) {
         this.taxi = taxi;
+    }
+    public int getDistance() {
+        return distance;
+    }
+    public int getFare() {
+        return fare;
+    }
+    public int getRideNum() {
+        return rideNum;
+    }
+    public Taxi getTaxi() {
+        return taxi;
+    }
+    void showRide(){
+        System.out.println("Ride Number : "+getRideNum());
+        System.out.println("Ride Distance : "+getDistance());
+        System.out.println("Ride Number : "+getFare());
+        System.out.println("Ride Number : "+getTaxi().taxiId);
     }
 }
 public class pra137 {
