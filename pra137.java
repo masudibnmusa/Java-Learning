@@ -22,7 +22,7 @@ abstract class Taxi{
     abstract void showTexi();
 }
 class NormalTaxi extends Taxi{
-    Taxi(int taxiId,String ownerName,String phone){
+    NormalTaxi(int taxiId,String ownerName,String phone){
         super(taxiId,ownerName,phone);
     }
     @Override
@@ -30,6 +30,17 @@ class NormalTaxi extends Taxi{
         System.out.println("Normal Taxi Id    : "+taxiId);
         System.out.println("Normal Taxi owner : "+ownerName);
         System.out.println("Normal Taxi phone : "+phone);
+    }
+}
+class PremiumTaxi extends Taxi{
+    PremiumTaxi(int taxiId,String ownerName,String phone){
+        super(taxiId, ownerName, phone);
+    }
+    @Override
+    void showTexi(){
+        System.out.println("Premium Taxi Id    : "+taxiId);
+        System.out.println("Premium Taxi owner : "+ownerName);
+        System.out.println("Premium Taxi phone : "+phone);
     }
 }
 
