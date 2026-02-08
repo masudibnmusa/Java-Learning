@@ -47,5 +47,12 @@ class PremiumTaxi extends Taxi{
 public class pra137 {
     public static void main(String[] args){
         //maingti 
+        Taxi t1 = new NormalTaxi(101, "Masud", "01964332844");
+        Taxi t2 = new PremiumTaxi(202, "Mahin", "01518361192");
+
+        t1.showTexi();
+        System.out.println();
+        t2.showTexi();
+
     }
 }
