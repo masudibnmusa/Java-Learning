@@ -100,12 +100,15 @@ public class pra137 {
         Taxi t1 = new NormalTaxi(101, "Masud", "01964332844");
         Taxi t2 = new PremiumTaxi(202, "Mahin", "01518361192");
         Ride r1 = new Ride(301, 12, 200, t2);
+        Ride r2 = new Ride(301, 12, 200, t1);
         
         t1.showTexi();
         System.out.println();
         t2.showTexi();
         System.out.println();
         r1.showRide();
+        System.out.println();
+        r2.showRide();
 
 
 
