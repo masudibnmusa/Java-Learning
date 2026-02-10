@@ -99,8 +99,10 @@ public class pra137 {
         //maingti 
         Taxi t1 = new NormalTaxi(101, "Masud", "01964332844");
         Taxi t2 = new PremiumTaxi(202, "Mahin", "01518361192");
+        Taxi t3 = new PremiumTaxi(202, "Mahin", "01518361192");
         Ride r1 = new Ride(301, 12, 200, t2);
         Ride r2 = new Ride(301, 12, 200, t1);
+        Ride r3 = new Ride(301, 12, 200, t3);
         
         t1.showTexi();
         System.out.println();
@@ -109,6 +111,8 @@ public class pra137 {
         r1.showRide();
         System.out.println();
         r2.showRide();
+        System.out.println();
+        r3.showRide();
 
 
 
