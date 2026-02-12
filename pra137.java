@@ -101,10 +101,12 @@ public class pra137 {
         Taxi t2 = new PremiumTaxi(202, "Mahin", "01518361192");
         Taxi t3 = new PremiumTaxi(202, "Mahin", "01518361192");
         Taxi t4 = new PremiumTaxi(202, "Mahin", "01518361192");
+        Taxi t5 = new PremiumTaxi(202, "Mahin", "01518361192");
         Ride r1 = new Ride(301, 12, 200, t2);
         Ride r2 = new Ride(301, 12, 200, t1);
         Ride r3 = new Ride(301, 12, 200, t3);
         Ride r4 = new Ride(301, 12, 200, t4);
+        Ride r5 = new Ride(301, 12, 200, t5);
         
         t1.showTexi();
         System.out.println();
@@ -121,6 +123,8 @@ public class pra137 {
         r3.showRide();
         System.out.println();
         r4.showRide();
+        System.out.println();
+        r5.showRide();
 
 
 
