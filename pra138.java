@@ -13,5 +13,8 @@ public class pra138 {
 
         int result = a +b;
         System.out.println("The result is : "+result);
+
+        int anotherresult = a-b;
+        System.out.println("Another result is : "+anotherresult);
     }
 }
