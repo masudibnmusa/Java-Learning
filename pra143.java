@@ -66,12 +66,22 @@ class Faculty extends User{
         super.showInfo();
     }
 }
+class Admin extends User{
+    Admin(int id,String name,int age,String phone){
+        super(id, name, age, phone);
+    }
+    @Override
+    void showInfo(){
+        System.out.println("--Admin Info--");
+        super.showInfo();
+    }
+}
 public class pra143 {
     public static void main(String[] args){
         //main
         User u1 = new Student(1, "Masud", 21, "01345678"); 
         User u2 = new Faculty(2, "Mahim" ,21, "01234567"); 
-        User u3 = new User(3, "Fahim", 21, "01234567"); 
+        User u3 = new Admin(3, "Fahim", 21, "01234567"); 
 
         u1.showInfo();
         System.out.println();
