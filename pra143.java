@@ -46,10 +46,20 @@ class User{
         System.out.println("Phone : "+getPhone());
     }
 }
+class Student extends User{
+    Student(int id,String name,int age,String phone){
+        super(id, name, age, phone);
+    }
+    @Override
+    void showInfo(){
+        System.out.println("--Student info--");
+        super.showInfo();
+    }
+}
 public class pra143 {
     public static void main(String[] args){
         //main
-        User u1 = new User(1, "Masud", 21, "01345678"); 
+        User u1 = new Student(1, "Masud", 21, "01345678"); 
         User u2 = new User(2, "Mahim" ,21, "01234567"); 
         User u3 = new User(3, "Fahim", 21, "01234567"); 
 
