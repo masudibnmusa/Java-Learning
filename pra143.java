@@ -1,13 +1,13 @@
 class User{
-    int id;
-    String name;
-    int age;
+    private int id;
+    private String name;
+    private int age;
     String phone;
     User(int id,String name,int age,String phone){
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.phone = phone;
+        setId(id);
+        setName(name);
+        setAge(age);
+        setPhone(phone);
     }
     public void setId(int id) {
         if(id<=0){
@@ -27,11 +27,23 @@ class User{
     public void setPhone(String phone) {
         this.phone = phone;
     }
+    public String getName() {
+        return name;
+    }
+    public int getId() {
+        return id;
+    }
+    public int getAge() {
+        return age;
+    }
+    public String getPhone() {
+        return phone;
+    }
     void showInfo(){
-        System.out.println("Id    : "+id);
-        System.out.println("Name  : "+name);
-        System.out.println("Age   : "+age);
-        System.out.println("Phone : "+phone);
+        System.out.println("Id    : "+getId());
+        System.out.println("Name  : "+getName());
+        System.out.println("Age   : "+getAge());
+        System.out.println("Phone : "+getPhone());
     }
 }
 public class pra143 {
