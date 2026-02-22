@@ -37,5 +37,15 @@ class User{
 public class pra143 {
     public static void main(String[] args){
         //main
+        User u1 = new User(1, "Masud", 21, "01345678"); 
+        User u2 = new User(2, "Mahim" ,21, "01234567"); 
+        User u3 = new User(3, "Fahim", 21, "01234567"); 
+
+        u1.showInfo();
+        System.out.println();
+        u2.showInfo();
+        System.out.println();
+        u3.showInfo();
+        System.out.println();
     }
 }
