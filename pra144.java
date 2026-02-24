@@ -1,4 +1,4 @@
-class User{
+abstract class User{
     private int id ;
     private String name ;
     private int age;
@@ -35,9 +35,19 @@ class User{
         System.out.println("Age : "+getAge());
     }
 }
+class Student extends User{
+    Student(int id,String name,int age){
+        super(id, name, age);
+    }
+    @Override
+    void showInfo(){
+        System.out.println("--Student Info--");
+        super.showInfo();
+    }
+}
 public class pra144 {
     public static void main(String[] args){
-        User u1 = new User(101, "Masud", 21);
+        User u1 = new Student(102, "Mahin", 23);
         u1.showInfo();
         //main
     }
