@@ -30,9 +30,9 @@ class User{
         return age;
     }
     void showInfo(){
-        System.out.println("ID : "+id);
-        System.out.println("Name : "+name);
-        System.out.println("Age : "+age);
+        System.out.println("ID : "+getId());
+        System.out.println("Name : "+getName());
+        System.out.println("Age : "+getAge());
     }
 }
 public class pra144 {
