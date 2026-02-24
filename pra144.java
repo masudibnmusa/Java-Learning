@@ -1,7 +1,7 @@
 abstract class User{
-    private int id ;
-    private String name ;
-    private int age;
+    protected int id ;
+    protected String name ;
+    protected int age;
     User(int id,String name,int age){
         setId(id);
         setName(name);
