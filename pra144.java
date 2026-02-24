@@ -45,10 +45,22 @@ class Student extends User{
         super.showInfo();
     }
 }
+class Faculty extends User{
+    Faculty(int id,String name,int age){
+        super(id, name, age);
+    }
+    @Override
+    void showInfo(){
+        System.out.println("--Faculty Info --");
+        super.showInfo();
+    }
+}
 public class pra144 {
     public static void main(String[] args){
         User u1 = new Student(102, "Mahin", 23);
+        User u2 = new Faculty(202, "Mahim", 23);
         u1.showInfo();
+        u2.showInfo();
         //main
     }
 }
