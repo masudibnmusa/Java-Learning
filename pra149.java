@@ -25,7 +25,11 @@ class Spell{
         this.effect = effect;
     }
     void printSpell(){
-        System.out.println(name+" spell is "+effect);
+        if(power>0){
+            System.out.println(name+" spell requires "+power+" wands of power");
+        }else{
+            System.out.println(name+" spell is "+effect);
+        }
     }
 }
 public class pra149 {
@@ -37,9 +41,13 @@ public class pra149 {
         expelliarmus.printSpell();
         lumos.printSpell();
         petrificus.printSpell();
-        
+
         expelliarmus.updateInfo("Stupefy");
         lumos.updateInfo(5);
         petrificus.updateInfo("imperico", "Controlling");
+
+        expelliarmus.printSpell();
+        petrificus.printSpell();
+        lumos.printSpell();
     }
 }
