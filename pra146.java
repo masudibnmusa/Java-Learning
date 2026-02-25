@@ -3,7 +3,16 @@ class Student {
     String name;
     Student(String name,int id){
         this.name = name ;
+        setId(id);
+    }
+    public void setId(int id) {
+        if(id <= 0){
+            throw new IllegalArgumentException("Id cant be negative");
+        }
         this.id = id;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
     void displayStudent(){
         System.out.println("Name : "+name);
