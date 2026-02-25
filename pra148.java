@@ -40,9 +40,6 @@ public class pra148 {
         p.setData("Python","Van de russo");
         p.setJavaData(12.9);
         p.setPythonData("objecte oriented");
-
         p.display();
-
-
     }
 }
