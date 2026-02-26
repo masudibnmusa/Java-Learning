@@ -44,10 +44,24 @@ class Driver extends User{
         super.displayUserInfo();
     }
 }
+class Rider extends User{
+    Rider(int id,String name,String phone){
+        super(id, name, phone);
+    }
+    @Override
+    void displayUserInfo(){
+        System.out.println("Ride Info");
+        super.displayUserInfo();
+    }
+}
 public class pra152 {
     public static void main(String [] args){
         //main
         User u1 = new User(101, "null", "null");
+        User u2 = new Driver(202, "null", "null");
+        User u3 = new Rider(303, "null", "null");
         u1.displayUserInfo();
+        u2.displayUserInfo();
+        u3.displayUserInfo();
     }
 }
