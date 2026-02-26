@@ -34,6 +34,16 @@ class User{
         System.out.println("User Phone number :"+getPhone());
     }
 }
+class Driver extends User{
+    Driver(int id,String name,String phone){
+        super(id, name, phone);
+    }
+    @Override
+    void displayUserInfo(){
+        System.out.println("Driver info");
+        super.displayUserInfo();
+    }
+}
 public class pra152 {
     public static void main(String [] args){
         //main
