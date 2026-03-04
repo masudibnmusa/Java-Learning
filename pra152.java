@@ -54,6 +54,23 @@ class Rider extends User{
         super.displayUserInfo();
     }
 }
+class Vehicle{
+    int vehicleId;
+    String vehicleType;
+    Vehicle(int vehicleId,String vehicleType){
+        setVehicleId(vehicleId);
+        setVehicleType(vehicleType);
+    }
+    public void setVehicleId(int vehicleId) {
+        if(vehicleId<=0){
+            throw new IllegalArgumentException("vehicle id cant be negative");
+        }
+        this.vehicleId = vehicleId;
+    }
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+}
 public class pra152 {
     public static void main(String [] args){
         //main
@@ -65,4 +82,3 @@ public class pra152 {
         u3.displayUserInfo();
     }
 }
-//upcomming ride and vehicle 
