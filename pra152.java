@@ -111,8 +111,19 @@ public class pra152 {
         User u1 = new User(101, "null", "null");
         User u2 = new Driver(202, "null", "null");
         User u3 = new Rider(303, "null", "null");
+
+        Vehicle v1 = new Car(303, null);
+        Vehicle v2 = new Bike(301, null);
+        Vehicle v3 = new CNG(303, null);
         u1.displayUserInfo();
         u2.displayUserInfo();
         u3.displayUserInfo();
+        System.out.println();
+        System.out.println();
+        v1.showVehicle();
+        System.out.println();
+        v2.showVehicle();
+        System.out.println();
+        v3.showVehicle();
     }
 }
