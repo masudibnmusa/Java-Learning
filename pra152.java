@@ -95,6 +95,16 @@ class CNG extends Vehicle{
         super.showVehicle();
     }
 }
+class Bike extends Vehicle{
+    Bike(int vehicleId,String VehicleType){
+        super(vehicleId, VehicleType);
+    }
+    @Override
+    void showVehicle(){
+        System.out.println("Bike Info");
+        super.showVehicle();
+    }
+}
 public class pra152 {
     public static void main(String [] args){
         //main
