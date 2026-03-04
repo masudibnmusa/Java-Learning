@@ -29,8 +29,8 @@ class User{
         return phone;
     }
     void displayUserInfo(){
-        System.out.println("User id : "+getId());
-        System.out.println("User Name : "+getName());
+        System.out.println("User id           : "+getId());
+        System.out.println("User Name         : "+getName());
         System.out.println("User Phone number :"+getPhone());
     }
 }
@@ -69,6 +69,30 @@ class Vehicle{
     }
     public void setVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
+    }
+    void showVehicle(){
+        System.out.println("Vehicle Id   : "+vehicleId);
+        System.out.println("Vehicle Type : "+vehicleType);
+    }
+}
+class Car extends Vehicle{
+    Car(int vehicleId,String vehicleType){
+        super(vehicleId, vehicleType);
+    }
+    @Override
+    void showVehicle(){
+        System.out.println("Car Info");
+        super.showVehicle();
+    }
+}
+class CNG extends Vehicle{
+    CNG(int vehicleId,String vehicleType){
+        super(vehicleId, vehicleType);
+    }
+    @Override
+    void showVehicle(){
+        System.out.println("CNG Info");
+        super.showVehicle();
     }
 }
 public class pra152 {
