@@ -42,6 +42,6 @@ public class pra154 {
         b1.makeSound();
         b1.fly();
         d1.makeSound(); 
-        d1.walk(); 
+        d1.walk();
     }
 }
