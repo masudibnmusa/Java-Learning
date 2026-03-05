@@ -30,5 +30,18 @@ class Dog extends Animal implements Walkable{
 public class pra154 {
     public static void main(String[]args){
         //main
+        Animal a1 = new Animal(){
+            public void makeSound(){
+                System.out.println("Animal makes sound....");
+            }
+        };
+        Bird b1 = new Bird();
+        Dog d1 = new Dog();
+
+        a1.makeSound();
+        b1.makeSound();
+        b1.fly();
+        d1.makeSound(); 
+        d1.walk(); 
     }
 }
