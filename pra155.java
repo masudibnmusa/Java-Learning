@@ -11,7 +11,17 @@ class Football extends Game implements Playable{
     } 
     @Override
     public void play(){
-        System.out.println("Playing football");
+        System.out.println("Playing football....");
+    }
+}
+class Cricket extends Game implements Playable{
+    @Override
+    public void start(){
+        System.out.println("Game Started....");
+    }
+    @Override
+    public void play(){
+        System.out.println("Playing cricket....");
     }
 }
 public class pra155 {
