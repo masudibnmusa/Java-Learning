@@ -45,5 +45,6 @@ public class pra102 {
         s1.display();
         System.out.println("--------------------");
         t1.display();
+        
     }
 }
