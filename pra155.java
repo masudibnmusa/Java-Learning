@@ -9,9 +9,14 @@ class Football extends Game implements Playable{
     public void start(){
         System.out.println("Game Started....");
     } 
+    @Override
+    public void play(){
+        System.out.println("Playing football");
+    }
 }
 public class pra155 {
     public static void main(String []args){
-        //main 
+        //main
+        
     }
 }
