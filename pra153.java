@@ -34,5 +34,18 @@ class BasicPrinter extends Machine implements Printer{
 public class pra153 {
     public static void main (String[]args){
         //main
+        Machine machine = new Machine() {
+            public void start(){
+                System.out.println("Starting.....");
+            }
+        };
+        Machine bacicPrinter = new BasicPrinter();
+        BasicPrinter printer1 = new BasicPrinter();
+
+        machine.start();
+        bacicPrinter.start();
+
+        printer1.start();
+        printer1.print();
     }
 }
