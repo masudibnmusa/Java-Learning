@@ -9,6 +9,8 @@ public class pra166 {
         int b = sc.nextInt();
 
         int sum = a + b;
+        int sub = a - b;
         System.out.println("Sum is : "+sum);
+        System.out.println("Sub is : "+sub);
     }
 }
