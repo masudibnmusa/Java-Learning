@@ -10,7 +10,9 @@ public class pra166 {
 
         int sum = a + b;
         int sub = a - b;
+        int multi = a*b;
         System.out.println("Sum is : "+sum);
         System.out.println("Sub is : "+sub);
+        System.out.println("Multi is : "+multi);
     }
 }
