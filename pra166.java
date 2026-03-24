@@ -16,5 +16,6 @@ public class pra166 {
         System.out.println("Sub is : "+sub);
         System.out.println("Multi is : "+multi);
         System.out.println("Div is : "+div);
+        System.out.println("that all my codding can do !");
     }
 }
