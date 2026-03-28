@@ -60,7 +60,7 @@ class Student extends User{
 interface Question {
     void display();
     boolean checkAnswer(String answer);
-    int getMark();
+    int getMarks();
 }
 class mcqQestion implements Question{
     private String question ;
@@ -95,10 +95,44 @@ class mcqQestion implements Question{
     public String getCorrectAnswer() {
         return correctAnswer;
     }
-    public int getMarks() {
+    public int getMark() {
+        return marks;
+    }
+    public void display(){
+        setOptions(options);
+        for (String opt : options){
+            System.out.println(opt);
+        }
+    }
+    public boolean checkAnswer(String answer){
+        return correctAnswer.equalsIgnoreCase(answer);
+    }
+    public int getMarks(){
         return marks;
     }
 }
+class TrueFalseQuestion implements Question{
+    private String question;
+    private boolean correctAnswer;
+    private int marks;
+    TrueFalseQuestion(String question,boolean correctAnsewer,int marks){
+        setQuestion(question);
+        setCorrectAnswer(correctAnsewer);
+        setMarks(marks);
+    }
+    
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+    public void setCorrectAnswer(boolean correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
+    public void setMarks(int marks) {
+        this.marks = marks;
+    }
+    
+}
+
 public class pra171 {
     public static void main(String[]args){
     }
