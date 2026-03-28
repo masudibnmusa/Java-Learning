@@ -130,6 +130,41 @@ class TrueFalseQuestion implements Question{
     public void setMarks(int marks) {
         this.marks = marks;
     }
+    public void display(){
+        System.out.println(question+"True/False");
+    }
+    public boolean checkAnswer(String answer){
+        return Boolean.parseBoolean(answer) == correctAnswer;
+    }
+    public int getMarks() {
+        return marks;
+    }
+}
+class ShortAnswerQuestion implements Question{
+    private String question ;
+    private int marks;
+    ShortAnswerQuestion(String quetion ,int marks){
+        setQuestion(quetion);
+        setMarks(marks);
+    }
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+    public void setMarks(int marks) {
+        this.marks = marks;
+    }
+    public int getMarks() {
+        return marks;
+    }
+    public String getQuestion() {
+        return question;
+    }
+    public void display(){
+        System.out.println(getQuestion());
+    }
+    public boolean checkAnswer(String answer){
+        return false;
+    }
     
 }
 
