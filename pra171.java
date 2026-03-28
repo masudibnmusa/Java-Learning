@@ -35,6 +35,26 @@ class Admin extends User{
         super.displayInfo();
     }
 }
+class Teacher extends User{
+    Teacher(int id,String userName){
+        super(id, userName);
+    }
+    @Override
+    void displayInfo(){
+        System.out.println("Teacher Info");
+        super.displayInfo();
+    }
+}
+class Student extends User{
+    Student(int id,String userName){
+        super(id, userName);
+    }
+    @Override
+    void displayInfo(){
+        System.out.println("Student Info");
+        super.displayInfo();
+    }
+}
 public class pra171 {
     public static void main(String[]args){
     }
