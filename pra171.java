@@ -1,4 +1,8 @@
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 class User{
     private int id;
@@ -165,7 +169,27 @@ class ShortAnswerQuestion implements Question{
     public boolean checkAnswer(String answer){
         return false;
     }
-    
+}
+class Exam{
+    private List<Question>questions = new ArrayList<>();
+    private Map<Question,String>studentAnswer = new HashMap<>();
+    private int duration;
+    Exam(int duration){
+        setDuration(duration);
+    }
+    public void setDuration(int duration) {
+        if(duration <=0){
+            throw new IllegalArgumentException("Duration cant be negative or zero!");
+        }
+        this.duration = duration;
+    }
+    public void addQuestion(Question q){
+        questions.add(q);
+    }
+    public void startExam(Student student){
+        ExamTImer timer = new ExamTImer(duration);
+        timer.start();
+    }
 }
 
 public class pra171 {
