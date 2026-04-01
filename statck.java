@@ -34,7 +34,20 @@ class MyStack<T> {
     }
 }
 public class statck {
-    public static void main(String[]args){
-        
+     public static void main(String[] args) {
+
+        MyStack<Integer> stack = new MyStack<>();
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println("Top element: " + stack.top());
+
+        stack.pop();
+        System.out.println("Top after pop: " + stack.top());
+
+        System.out.println("Stack size: " + stack.getSize());
+        System.out.println("Is empty: " + stack.isEmpty());
     }
 }
