@@ -1,5 +1,46 @@
 import java.util.ArrayList;
+class TestMyStack {
+    public static void main(String[] args) {
 
+        // Test Integer Stack
+        MyStack<Integer> intStack = new MyStack<>();
+
+        System.out.println("Testing Integer Stack...");
+        intStack.push(5);
+        intStack.push(15);
+        intStack.push(25);
+
+        System.out.println("Top: " + intStack.top()); // 25
+        intStack.pop();
+        System.out.println("Top after pop: " + intStack.top()); // 15
+        System.out.println("Size: " + intStack.getSize()); // 2
+
+        // Test String Stack
+        MyStack<String> strStack = new MyStack<>();
+
+        System.out.println("\nTesting String Stack...");
+        strStack.push("A");
+        strStack.push("B");
+        strStack.push("C");
+
+        System.out.println("Top: " + strStack.top()); // C
+        strStack.pop();
+        System.out.println("Top after pop: " + strStack.top()); // B
+        System.out.println("Size: " + strStack.getSize()); // 2
+
+        // Test Empty Condition
+        MyStack<Double> emptyStack = new MyStack<>();
+
+        System.out.println("\nTesting Empty Stack...");
+        System.out.println("Is empty: " + emptyStack.isEmpty()); // true
+
+        try {
+            emptyStack.pop();
+        } catch (RuntimeException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
 class MyStack<T> {
     private ArrayList<T> elements;
 
