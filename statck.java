@@ -90,5 +90,6 @@ public class statck {
 
         System.out.println("Stack size: " + stack.getSize());
         System.out.println("Is empty: " + stack.isEmpty());
+        System.out.println("My name is masud ibn musa");
     }
 }
