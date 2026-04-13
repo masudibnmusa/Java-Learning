@@ -7,5 +7,6 @@ public class pra174 {
         System.out.print("Enter your name :");
         String name = sc.nextLine();
         System.err.println("Welcome"+name);
+        System.out.println("Iam not well from 2 days ,, i have been suffering from fever.");
     }
 }
