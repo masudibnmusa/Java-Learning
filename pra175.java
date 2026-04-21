@@ -41,6 +41,18 @@ abstract class Person {
     public String getAddress() {
         return address;
     }
+    abstract void display();
+}
+class Student extends Person{
+    Student(String name,int age,String address) throws MyException {
+        super(name, age, address);
+    }
+    @Override
+    void display(){
+        System.out.println("Name is : "+getName());
+        System.out.println("Age is : "+getAge());
+        System.out.println("Address is : "+getAddress());
+    }
 }
 
 public class pra175 {
