@@ -43,6 +43,17 @@ abstract class Person {
     }
     abstract void display();
 }
+class Teacher extends Person{
+    Teacher(String name ,int age,String address)throws MyException{
+        super(name, age, address);
+    }
+    @Override
+    void display(){
+        System.out.println("Name : "+getName());
+        System.out.println("Age : "+getAge());
+        System.out.println("Address : "+getAddress());
+    }
+}
 class Student extends Person{
     Student(String name,int age,String address) throws MyException {
         super(name, age, address);
