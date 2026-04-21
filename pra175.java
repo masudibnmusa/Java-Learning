@@ -67,20 +67,19 @@ class Student extends Person{
 }
 
 public class pra175 {
-    public static void main(String[] args) {
+    public static void main(String[]args) throws MyException {
         System.out.print("Enter your age :");
         Scanner sc = new Scanner(System.in);
-        int age = sc.nextInt();
-        sc.nextLine();
-        if (age <18){
-            try{
-                throw new MyException("Not possible");
-            }catch (MyException e){
-                System.out.println("Exception: "+e.getMessage());
-            }
-        }else{
-            System.out.println("THe age is :"+age);
-        }
+        Person p1 = new Student("Masud",21,"Katiadi");
+        Person p2 = new Student("Mahin",21,"Katiadi");
+        Person p3 = new Teacher("Masud",23,"Dhaka");
+
+        p1.display();
+        System.out.println();
+        p2.display();
+        System.out.println();
+        p3.display();
+        System.out.println();
         sc.close();
     }
 }
