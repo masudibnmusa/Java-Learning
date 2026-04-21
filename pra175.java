@@ -68,8 +68,14 @@ class Student extends Person{
 
 public class pra175 {
     public static void main(String[]args) throws MyException {
-        System.out.print("Enter your age :");
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your age :");
+        int age = sc.nextInt();
+        if(age<18){
+            throw new MyException("why so hurry!");
+        }else{
+            System.out.println("Welcome to the jungle bro !");
+        }
         Person p1 = new Student("Masud",21,"Katiadi");
         Person p2 = new Student("Mahin",21,"Katiadi");
         Person p3 = new Teacher("Masud",23,"Dhaka");
