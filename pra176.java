@@ -43,9 +43,21 @@ class Student extends User{
         super.display();
     }
 }
+class Teacher extends User{
+    Teacher(int id,String name,String address){
+        super(id, name, address);
+    }
+    @Override
+    void display(){
+        super.display();
+    }
+}
 public class pra176 {
     public static void main(String[] args) {
        User u1 = new Student(2,"Masud","Katiadi");
        u1.display();
+       System.out.println();
+       User u2 = new Teacher(2, "Raskib", "Sekh Para");
+       u2.display();
     }
 }
