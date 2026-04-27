@@ -29,9 +29,26 @@ abstract class Transport{
     void stop(){
         System.out.println("stoped......");
     }
-    abstract void getLocation(int distance);
+    abstract void calculateFare(int distance);
 }
-
+class Bus extends Transport implements GPS{
+    Bus(int id, String name){
+        super(id, name);
+    }
+    @Override
+    void start(){
+        super.start();
+    }
+    @Override
+    void stop(){
+        super.stop();
+    }
+    @Override
+    void calculateFare(int distance){
+        int fare = distance*6;
+        System.out.println("Total Fare is : "+fare);
+    }
+}
 public class pra178 {
     public static void main(String[] args) {
         
