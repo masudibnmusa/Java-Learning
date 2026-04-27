@@ -23,7 +23,17 @@ abstract class Transport{
     public String getName(){
         return name;
     }
+    void start(){
+        System.out.println("Starting........");
+    }
+    void stop(){
+        System.out.println("stoped......");
+    }
+    abstract void getLocation(int distance);
 }
+
 public class pra178 {
-    
+    public static void main(String[] args) {
+        
+    }
 }
