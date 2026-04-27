@@ -6,6 +6,7 @@ abstract class Transport{
     private String name;
     Transport(int id,String name){
         setId(id);
+        setName(name);
     }
     public void setId(int id){
         if (id < 0){
@@ -13,7 +14,15 @@ abstract class Transport{
         }
         this.id = id;
     }
-    public void setName(String name)
+    public void setName(String name){
+        this.name = name;
+    }
+    public int getId(){
+        return id;
+    }
+    public String getName(){
+        return name;
+    }
 }
 public class pra178 {
     
