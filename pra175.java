@@ -79,12 +79,16 @@ public class pra175 {
         Person p1 = new Student("Masud",21,"Katiadi");
         Person p2 = new Student("Mahin",21,"Katiadi");
         Person p3 = new Teacher("Masud",23,"Dhaka");
+        Person p4 = new Teacher("Masud",23,"Dhaka");
 
         p1.display();
         System.out.println();
         p2.display();
         System.out.println();
         p3.display();
+        
+        System.out.println();
+        p4.display();
         System.out.println();
         sc.close();
     }
