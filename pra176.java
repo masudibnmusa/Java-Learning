@@ -1,9 +1,11 @@
-abstract class User{
+class User{
     int id ;
     String name; 
     String address;
     User(int id ,String name,String address){
+        setId(id);
         setName(name);
+        setAddress(address);
     }
     public void setId(int id) {
         if (id < 0){
@@ -28,12 +30,13 @@ abstract class User{
     }
     void display(){
         System.out.println("Id : "+getId());
-        System.out.println("Id : "+getName());
-        System.out.println("Id : "+getAddress());
+        System.out.println("Name : "+getName());
+        System.out.println("Address : "+getAddress());
     }
 }
 public class pra176 {
     public static void main(String[] args) {
-       System.out.println("hello"); 
+       User u1 = new User(2,"Masud","Katiadi");
+       u1.display();
     }
 }
