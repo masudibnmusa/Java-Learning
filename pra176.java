@@ -17,8 +17,20 @@ abstract class User{
     public void setAddress(String address) {
         this.address = address;
     }
-    
-    abstract void display();
+    public int getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getAddress() {
+        return address;
+    }
+    void display(){
+        System.out.println("Id : "+getId());
+        System.out.println("Id : "+getName());
+        System.out.println("Id : "+getAddress());
+    }
 }
 public class pra176 {
     public static void main(String[] args) {
