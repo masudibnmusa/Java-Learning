@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 interface GPS{
-    void getLocation();
+    void getLocation(Scanner sc);
 }
 abstract class Transport{
     private int id;
@@ -51,8 +51,8 @@ class Bus extends Transport implements GPS{
         System.out.println("Total Fare is : "+fare);
     }
     @Override
-    public void getLocation() {
-        Scanner sc = new Scanner(System.in);
+    public void getLocation(Scanner sc) {
+        System.out.print("Enter the Location : ");
         String location = sc.nextLine();
         System.out.println("Location : "+location);
         
@@ -76,8 +76,8 @@ class Train extends Transport implements GPS{
         System.out.println("Total Fare is : "+fare);
     }
     @Override
-    public void getLocation() {
-        Scanner sc = new Scanner(System.in);
+    public void getLocation(Scanner sc) {
+        System.out.print("Enter the Location : ");
         String location = sc.nextLine();
         System.out.println("Location : "+location);
         
@@ -85,6 +85,17 @@ class Train extends Transport implements GPS{
 }
 public class pra178 {
     public static void main(String[] args) {
-        
+        Scanner sc = new Scanner(System.in);
+        Transport t1 = new Bus(0, null);
+        Train t2 = new Train(0, null);
+        t1.start();
+        t1.stop();
+        ((GPS)t1).getLocation(sc);
+        t1.calculateFare(12);
+        System.out.println();
+        t2.start();
+        t2.stop();
+        t2.getLocation(sc);
+        t2.calculateFare(12);
     }
 }
