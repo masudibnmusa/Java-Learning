@@ -45,7 +45,7 @@ class Student extends User{
 }
 public class pra176 {
     public static void main(String[] args) {
-       User u1 = new User(2,"Masud","Katiadi");
+       User u1 = new Student(2,"Masud","Katiadi");
        u1.display();
     }
 }
