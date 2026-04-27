@@ -1,4 +1,4 @@
-class User{
+abstract class User{
     int id ;
     String name; 
     String address;
@@ -29,9 +29,18 @@ class User{
         return address;
     }
     void display(){
-        System.out.println("Id : "+getId());
-        System.out.println("Name : "+getName());
+        System.out.println("Id      : "+getId());
+        System.out.println("Name    : "+getName());
         System.out.println("Address : "+getAddress());
+    }
+}
+class Student extends User{
+    Student(int id, String name , String address){
+        super(id, name, address);
+    }
+    @Override
+    void display(){
+        super.display();
     }
 }
 public class pra176 {
