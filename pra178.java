@@ -49,6 +49,24 @@ class Bus extends Transport implements GPS{
         System.out.println("Total Fare is : "+fare);
     }
 }
+class Train extends Transport implements GPS{
+    Train(int id,String name){
+        super(id, name);
+    }
+    @Override
+    void start(){
+        super.start();
+    }
+    @Override
+    void stop(){
+        super.stop();
+    }
+    @Override
+    void calculateFare(int distance){
+        int fare = distance*5;
+        System.out.println("Total Fare is : "+fare);
+    }
+}
 public class pra178 {
     public static void main(String[] args) {
         
