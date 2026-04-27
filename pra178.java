@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 interface GPS{
     void getLocation();
 }
@@ -48,6 +50,13 @@ class Bus extends Transport implements GPS{
         int fare = distance*6;
         System.out.println("Total Fare is : "+fare);
     }
+    @Override
+    public void getLocation() {
+        Scanner sc = new Scanner(System.in);
+        String location = sc.nextLine();
+        System.out.println("Location : "+location);
+        
+    }
 }
 class Train extends Transport implements GPS{
     Train(int id,String name){
@@ -65,6 +74,13 @@ class Train extends Transport implements GPS{
     void calculateFare(int distance){
         int fare = distance*5;
         System.out.println("Total Fare is : "+fare);
+    }
+    @Override
+    public void getLocation() {
+        Scanner sc = new Scanner(System.in);
+        String location = sc.nextLine();
+        System.out.println("Location : "+location);
+        
     }
 }
 public class pra178 {
