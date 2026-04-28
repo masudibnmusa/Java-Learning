@@ -19,7 +19,7 @@ public class pra180 {
             int result = a/b;
             System.out.println("Result : "+result);
         }catch(MyEx e){
-            System.out.println(e.getMessage());
+            System.out.println("Error:"+e.getMessage());
         }
     }
 }
