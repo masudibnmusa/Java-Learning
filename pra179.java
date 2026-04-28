@@ -4,13 +4,13 @@ class MyException extends Exception{
     }
 }
 interface Transection {
-    void sendMoney(int amount);
-    void cashIn(int amount);
-    void cashOut(int amount);
+    void sendMoney(int amount)throws MyException;
+    void cashIn(int amount) throws MyException;
+    void cashOut(int amount) throws MyException;
 }
 abstract class Account{
-    protected int acc;
-    protected int bal;
+    private int acc;
+    private int bal;
     Account(int acc,int bal)throws MyException{
         setAcc(acc);
         setBal(bal);
@@ -39,6 +39,9 @@ abstract class Account{
     void accDetails(){
         System.out.println("Acc No : "+getAcc());
     }
+    void updateBalance(int bal){
+        this.bal = bal;
+    }
 }
 class SavingAccount extends Account implements Transection{
     SavingAccount(int acc,int bal) throws MyException{
@@ -53,18 +56,27 @@ class SavingAccount extends Account implements Transection{
         super.accDetails();
     }
     @Override
-    public void cashIn(int amount) {
-        bal +=amount;
+    public void cashIn(int amount)throws MyException {
+        if(amount<=0){
+            throw new MyException("amount cant be negative or zero !");
+        }
+        updateBalance(getBal()+amount);
         System.out.println("CashIn Successfully!");
     }
     @Override
-    public void cashOut(int amount) {
-        bal -=amount;
+    public void cashOut(int amount)throws MyException {
+        if(amount<=0){
+            throw new MyException("Amount cant be negative or zero !");
+        }
+        updateBalance(getBal()+amount);
         System.out.println("Cash out Successfully!");
     }
     @Override
-    public void sendMoney(int amount) {
-        bal-=amount;
+    public void sendMoney(int amount)throws MyException {
+        if(amount<=0){
+            throw new MyException("Amount cant be negative or zero !");
+        }
+        updateBalance(getBal()+amount);
         System.out.println("Fund transfered Successfully!");
     }
 }
