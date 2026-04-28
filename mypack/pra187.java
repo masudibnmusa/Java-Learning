@@ -1,6 +1,6 @@
 package mypack;
 public class pra187 {
-    void show(){
+    public void show(){
         System.out.println("Hello from package !");
     }
 }
