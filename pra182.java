@@ -13,13 +13,26 @@ public class pra182 {
             System.out.println(lst);
         }
         System.out.println();
-        
+        list.clear();
+        for (String lst : list){
+            System.out.println(lst);
+        }
+        System.out.println();
+
         ArrayList<Integer> num = new ArrayList<>();
         num.add(10); 
         num.add(12); 
         num.add(13); 
         num.add(14); 
         num.add(15);
+        for(int set : num){
+            System.out.println(set);
+        }
+        System.out.println();
+
+        num.addFirst(9);
+        num.add(1, 11);
+        num.addLast(16); 
         for(int set : num){
             System.out.println(set);
         } 
