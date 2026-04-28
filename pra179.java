@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class MyException extends Exception{
     public MyException(String message){
         super(message);
@@ -119,6 +121,7 @@ class BussinessAccount extends Account implements Transection{
 }
 public class pra179 { 
     public static void main(String[] args)throws MyException{
+        ArrayList<Account> accounts = new ArrayList<>();
         //main
         SavingAccount a1 = new SavingAccount(12, 2000);
         a1.checkBalance();
@@ -135,6 +138,12 @@ public class pra179 {
         a2.cashOut(200);
         a2.sendMoney(200);
         a2.checkBalance();
+        System.out.println();
+        accounts.add(a1);
+        accounts.add(a2);
+        for(Account acc : accounts){
+            acc.accDetails();
+        }
         
     }
 }
