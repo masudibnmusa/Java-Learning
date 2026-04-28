@@ -22,6 +22,12 @@ class Account{
         }
         this.bal = bal;
     }
+    public int getAcc() {
+        return acc;
+    }
+    public int getBal() {
+        return bal;
+    }
 }
 public class pra179 {
     public static void main(String[] args) {
