@@ -41,7 +41,10 @@ class Account{
     }
 }
 public class pra179 {
-    public static void main(String[] args) {
+    public static void main(String[] args)throws MyException{
         //main
+        Account a1 = new Account(12, 2000);
+        a1.checkBalance();
+        a1.accDetails();
     }
 }
