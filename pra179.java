@@ -8,9 +8,9 @@ interface Transection {
     void cashIn(int amount);
     void cashOut(int amount);
 }
-class Account{
-    private int acc;
-    private int bal;
+abstract class Account{
+    protected int acc;
+    protected int bal;
     Account(int acc,int bal)throws MyException{
         setAcc(acc);
         setBal(bal);
@@ -51,12 +51,17 @@ class SavingAccount extends Account implements Transection{
     @Override
     void accDetails() {
         super.accDetails();
-    }  
+    }
+    @Override
+    public void cashIn(int amount) {
+        bal +=amount;
+        System.out.println("CashIn Successfully!");
+} 
 }
 public class pra179 { 
     public static void main(String[] args)throws MyException{
         //main
-        Account a1 = new Account(12, 2000);
+        Account a1 = new SavingAccount(12, 2000);
         a1.checkBalance();
         a1.accDetails();
     }
