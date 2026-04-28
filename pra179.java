@@ -80,6 +80,43 @@ class SavingAccount extends Account implements Transection{
         System.out.println("Fund transfered Successfully!");
     }
 }
+class BussinessAccount extends Account implements Transection{
+    BussinessAccount(int acc,int bal) throws MyException{
+        super(acc, bal);
+    }
+    @Override
+    void checkBalance() {
+        super.checkBalance();
+    }
+    @Override
+    void accDetails() {
+        super.accDetails();
+    }
+    @Override
+    public void cashIn(int amount)throws MyException {
+        if(amount<=0){
+            throw new MyException("amount cant be negative or zero !");
+        }
+        updateBalance(getBal()+amount);
+        System.out.println("CashIn Successfully!");
+    }
+    @Override
+    public void cashOut(int amount)throws MyException {
+        if(amount<=0){
+            throw new MyException("Amount cant be negative or zero !");
+        }
+        updateBalance(getBal()+amount);
+        System.out.println("Cash out Successfully!");
+    }
+    @Override
+    public void sendMoney(int amount)throws MyException {
+        if(amount<=0){
+            throw new MyException("Amount cant be negative or zero !");
+        }
+        updateBalance(getBal()+amount);
+        System.out.println("Fund transfered Successfully!");
+    }
+}
 public class pra179 { 
     public static void main(String[] args)throws MyException{
         //main
@@ -90,6 +127,14 @@ public class pra179 {
         a1.cashOut(200);
         a1.sendMoney(200);
         a1.checkBalance();
+        System.out.println();
+        BussinessAccount a2 = new BussinessAccount(12, 2000);
+        a2.checkBalance();
+        a2.accDetails();
+        a2.cashIn(200);
+        a2.cashOut(200);
+        a2.sendMoney(200);
+        a2.checkBalance();
         
     }
 }
