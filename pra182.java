@@ -35,6 +35,12 @@ public class pra182 {
         num.addLast(16); 
         for(int set : num){
             System.out.println(set);
-        } 
+        }
+        System.out.println();
+        num.removeLast();
+        num.remove(0); 
+        for(int set : num){
+            System.out.println(set);
+        }
     }
 }
