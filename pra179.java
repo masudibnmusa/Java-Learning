@@ -40,7 +40,20 @@ class Account{
         System.out.println("Acc No : "+getAcc());
     }
 }
-public class pra179 {
+class SavingAccount extends Account implements Transection{
+    SavingAccount(int acc,int bal) throws MyException{
+        super(acc, bal);
+    }
+    @Override
+    void checkBalance() {
+        super.checkBalance();
+    }
+    @Override
+    void accDetails() {
+        super.accDetails();
+    }  
+}
+public class pra179 { 
     public static void main(String[] args)throws MyException{
         //main
         Account a1 = new Account(12, 2000);
