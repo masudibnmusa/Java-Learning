@@ -33,6 +33,12 @@ class Account{
     public int getBal() {
         return bal;
     }
+    void checkBalance(){
+        System.out.println("Main Balance : "+getBal());
+    }
+    void accDetails(){
+        System.out.println("Acc No : "+getAcc());
+    }
 }
 public class pra179 {
     public static void main(String[] args) {
