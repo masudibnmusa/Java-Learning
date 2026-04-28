@@ -8,10 +8,13 @@ public class pra180 {
         //main
         try{int a = 5;
             int b = 0;
+            if(b==0){
+                throw new MyEx("cant divisible by zero !");
+            }
             int result = a/b;
             System.out.println(result);
-        }catch(ArithmeticException e){
-            System.out.println("cant devide!");
+        }catch(MyEx e){
+            System.out.println(e.getMessage());
         }
     }
 }
