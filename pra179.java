@@ -71,8 +71,13 @@ class SavingAccount extends Account implements Transection{
 public class pra179 { 
     public static void main(String[] args)throws MyException{
         //main
-        Account a1 = new SavingAccount(12, 2000);
+        SavingAccount a1 = new SavingAccount(12, 2000);
         a1.checkBalance();
         a1.accDetails();
+        a1.cashIn(200);
+        a1.cashOut(200);
+        a1.sendMoney(200);
+        a1.checkBalance();
+        
     }
 }
