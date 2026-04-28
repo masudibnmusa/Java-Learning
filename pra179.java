@@ -3,6 +3,11 @@ class MyException extends Exception{
         super(message);
     }
 }
+interface Transection {
+    void sendMoney(int amount);
+    void cashIn(int amount);
+    void cashOut(int amount);
+}
 class Account{
     private int acc;
     private int bal;
