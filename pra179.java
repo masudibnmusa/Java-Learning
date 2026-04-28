@@ -56,7 +56,17 @@ class SavingAccount extends Account implements Transection{
     public void cashIn(int amount) {
         bal +=amount;
         System.out.println("CashIn Successfully!");
-} 
+    }
+    @Override
+    public void cashOut(int amount) {
+        bal -=amount;
+        System.out.println("Cash out Successfully!");
+    }
+    @Override
+    public void sendMoney(int amount) {
+        bal-=amount;
+        System.out.println("Fund transfered Successfully!");
+    }
 }
 public class pra179 { 
     public static void main(String[] args)throws MyException{
