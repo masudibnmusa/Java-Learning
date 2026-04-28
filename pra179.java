@@ -41,7 +41,10 @@ abstract class Account{
     void accDetails(){
         System.out.println("Acc No : "+getAcc());
     }
-    void updateBalance(int bal){
+    void updateBalance(int bal)throws MyException{
+        if(bal < 0){
+            throw new MyException("Bal cant be negative!");
+        }
         this.bal = bal;
     }
 }
