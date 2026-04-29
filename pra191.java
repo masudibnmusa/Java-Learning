@@ -1,5 +1,4 @@
 import java.util.Collections;
-import java.lang.annotation.Target;
 import java.util.ArrayList;
 public class pra191 {
     public static void main(String[] args){
@@ -31,5 +30,10 @@ public class pra191 {
         }else{
             System.out.println(target+" is not in the competition");
         }
+
+        Collections.sort(FinalList);
+        System.out.println(FinalList);
+
+        System.out.println("Toral Size of final list "+FinalList.size());
     }
 }
