@@ -28,6 +28,10 @@ class Human implements Assistance ,Student{
 }
 public class pra190 {
     public static void main(String[] args) {
-        //main
+        Human h1 = new Human();
+        h1.eating();
+        h1.sleeping();
+        h1.assisting();
+        h1.working();
     }
 }
