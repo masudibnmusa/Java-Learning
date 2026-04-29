@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+
 class InvalidAgeException extends Exception{
     public InvalidAgeException(String message){
         super(message);
@@ -30,6 +32,13 @@ public class pra189 {
 
         }catch(InvalidAgeException e){
             System.out.println("Error:"+e.getMessage());
+        }catch(InputMismatchException e){
+            System.out.println(e.getMessage());
+        }catch(NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
+        finally{
+            System.out.println("System is running .");
         }
     }
 }
