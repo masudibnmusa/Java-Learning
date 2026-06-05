@@ -4,7 +4,13 @@ class User{
     private String name ;
     private int age ;
     User(String name,int age){
-        this.name = name ;
+        setName(name);
+        setAge(age);
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setAge(int age) {
         this.age = age;
     }
     public String getName() {
@@ -27,14 +33,27 @@ class Teacher extends User{
         super.showUser();
     }
 }
+class Student extends User{
+    Student(String name ,int age ){
+        super(name, age);
+    }
+    @Override
+    void showUser(){
+        super.showUser();
+    }
+}
 public class pra193 {
     public static void main(String[] args) {
 
         User u1 = new User("Ratul", 12);
         Teacher t1 = new Teacher("Mahim", 22);
+        Student s1 = new Student("Mahin", 22);
         u1.showUser();
         System.out.println();
         t1.showUser();
+        System.out.println();
+        s1.showUser();
+        System.out.println();       
         System.out.println(u1.getName());
     }
 }
