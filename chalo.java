@@ -26,7 +26,7 @@ class RideServices {
         if(rideType == null){
             return  null;
         }
-        if(rideType.equalsIgnoreCase("CNG")){
+        if(rideType.equals("CNG")){
             return new CNG();
         }else if(rideType.equalsIgnoreCase("Bike")){
             return new Bike();
@@ -42,7 +42,7 @@ public class chalo {
     public static void main(String[] args) {
         RideServices rideServices = new RideServices();
         
-        Rides userRides1 = rideServices.getRide("Bike");
-        userRides1.startRide("Daffodil International University", "Mirpur");
+        Rides rides = rideServices.getRide("CNG");
+        rides.startRide("Daffodil International University", "Mirpur");
     }
 }
